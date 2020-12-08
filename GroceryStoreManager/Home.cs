@@ -26,5 +26,18 @@ namespace GroceryStoreManager
         {
             MetroFramework.MetroMessageBox.Show(this, "Message", "Ahihi", MessageBoxButtons.OK, MessageBoxIcon.Error, 100);
         }
+
+        private void DonHang_Click(object sender, EventArgs e)
+        {
+            this.Text = UserControl1.title;
+            if (!panel.Controls.Contains(UserControl1.Instance))
+            {
+                panel.Controls.Add(UserControl1.Instance);
+                UserControl1.Instance.Dock = DockStyle.Fill;
+                UserControl1.Instance.BringToFront();
+            }
+            else
+                UserControl1.Instance.BringToFront();
+        }
     }
 }
