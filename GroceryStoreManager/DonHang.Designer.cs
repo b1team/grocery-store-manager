@@ -103,18 +103,20 @@
             // 
             this.NvBanHang.HeaderText = "Nhân viên bán hàng";
             this.NvBanHang.Name = "NvBanHang";
+            this.NvBanHang.Width = 150;
             // 
             // TongTien
             // 
+            this.TongTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.TongTien.HeaderText = "Tổng tiền";
             this.TongTien.Name = "TongTien";
             // 
-            // UserControl1
+            // DonHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.GridDonHang);
-            this.Name = "UserControl1";
+            this.Name = "DonHang";
             this.Size = new System.Drawing.Size(1554, 704);
             ((System.ComponentModel.ISupportInitialize)(this.GridDonHang)).EndInit();
             this.ResumeLayout(false);
