@@ -44,7 +44,7 @@
             this.DonHang.ForeColor = System.Drawing.Color.White;
             this.DonHang.Location = new System.Drawing.Point(23, 63);
             this.DonHang.Name = "DonHang";
-            this.DonHang.Size = new System.Drawing.Size(161, 90);
+            this.DonHang.Size = new System.Drawing.Size(176, 90);
             this.DonHang.Style = MetroFramework.MetroColorStyle.Silver;
             this.DonHang.TabIndex = 2;
             this.DonHang.Text = "Đơn Hàng";
@@ -71,9 +71,9 @@
             // TileNhaCungCap
             // 
             this.TileNhaCungCap.ActiveControl = null;
-            this.TileNhaCungCap.Location = new System.Drawing.Point(199, 63);
+            this.TileNhaCungCap.Location = new System.Drawing.Point(217, 63);
             this.TileNhaCungCap.Name = "TileNhaCungCap";
-            this.TileNhaCungCap.Size = new System.Drawing.Size(161, 90);
+            this.TileNhaCungCap.Size = new System.Drawing.Size(176, 90);
             this.TileNhaCungCap.Style = MetroFramework.MetroColorStyle.Green;
             this.TileNhaCungCap.TabIndex = 4;
             this.TileNhaCungCap.Text = "Nhà cung cấp";
@@ -84,7 +84,7 @@
             // TileBanHang
             // 
             this.TileBanHang.ActiveControl = null;
-            this.TileBanHang.Location = new System.Drawing.Point(377, 63);
+            this.TileBanHang.Location = new System.Drawing.Point(412, 63);
             this.TileBanHang.Name = "TileBanHang";
             this.TileBanHang.Size = new System.Drawing.Size(176, 90);
             this.TileBanHang.Style = MetroFramework.MetroColorStyle.Blue;
@@ -100,9 +100,9 @@
             // TileGiaoDich
             // 
             this.TileGiaoDich.ActiveControl = null;
-            this.TileGiaoDich.Location = new System.Drawing.Point(572, 63);
+            this.TileGiaoDich.Location = new System.Drawing.Point(607, 63);
             this.TileGiaoDich.Name = "TileGiaoDich";
-            this.TileGiaoDich.Size = new System.Drawing.Size(167, 90);
+            this.TileGiaoDich.Size = new System.Drawing.Size(176, 90);
             this.TileGiaoDich.Style = MetroFramework.MetroColorStyle.Black;
             this.TileGiaoDich.TabIndex = 6;
             this.TileGiaoDich.Text = "Giao dịch";
@@ -113,9 +113,9 @@
             // TileNhapHang
             // 
             this.TileNhapHang.ActiveControl = null;
-            this.TileNhapHang.Location = new System.Drawing.Point(758, 63);
+            this.TileNhapHang.Location = new System.Drawing.Point(802, 63);
             this.TileNhapHang.Name = "TileNhapHang";
-            this.TileNhapHang.Size = new System.Drawing.Size(165, 90);
+            this.TileNhapHang.Size = new System.Drawing.Size(176, 90);
             this.TileNhapHang.TabIndex = 7;
             this.TileNhapHang.Text = "Nhập Hàng";
             this.TileNhapHang.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
