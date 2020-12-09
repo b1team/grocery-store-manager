@@ -1,6 +1,6 @@
 ﻿namespace GroceryStoreManager
 {
-    partial class UserControl1
+    partial class DonHang
     {
         /// <summary> 
         /// Required designer variable.

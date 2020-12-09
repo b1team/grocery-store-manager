@@ -10,28 +10,21 @@ using System.Windows.Forms;
 
 namespace GroceryStoreManager
 {
-    public partial class UserControl1 : UserControl
+    public partial class BanHang : UserControl
     {
-        public static string title = "Đơn Hàng";
-        private static UserControl1 _instance;
-        public static UserControl1 Instance
+        private static BanHang _instance;
+        public static BanHang Instance
         {
             get
             {
                 if (_instance == null)
-                    _instance = new UserControl1();
+                    _instance = new BanHang();
                 return _instance;
             }
         }
-        public UserControl1()
+        public BanHang()
         {
             InitializeComponent();
-        }
-
-        private void metroTile1_Click(object sender, EventArgs e)
-        {
-            modal form = new modal();
-            form.ShowDialog();
         }
     }
 }
