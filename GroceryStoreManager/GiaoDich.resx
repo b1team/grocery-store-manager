@@ -117,20 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="TileBanHang.TileImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAkBJREFUeF7t
-        lk1KA0EQhSP+HUFRvEsgouQAgfwRsooLL6ToKcSNO1ciKoLHiETdutPqoYS26EnGqX6mAvXBW6TKqfdS
-        6R5sOI7jOI7jLGIwGHytkjh2PlImlsWx85EysSyOnY+UiWVx7HwsMtD2taDn+wIWGWj7WtDzfQHSwLo4
-        dh4mk8lmysSyms3mBsfX0+/3D1MmxtXi+HqGw+FlwsC06Ee74Pg6+PjPhEFLfM7+UvxrP3FKZ1muAQ0+
-        FoOnnU5nXdSWvgDONBX1I/7z+iSO/1moi9rSFxBqlPU8rqmvAW11iwa9x0NJxctF1EwsIHUNwhUuHqhD
-        2fEPPVE3sYDs16Ds+AdE3cQCAtmuwbzjHxB1MwvIdg3mHf+A6JlZQLZrMO/4B0TPzAICWa4BDXmNh5B+
-        bVH0TC0gdXq5VR166CMeMhqN9rnV6Ha7e3EvaDwe73LbQv9A9N+4VR166D4eQifiqtfr7QQj+nwd91ag
-        f8dfqzr00KkYsrKi5Zzw16pOu93epgdfUgOD6J4l69ZE3+G59n+DfNdu5NAfhQWRblM91hOp9HmSql/F
-        P3531WWNfu2xHE41Wmyx2aJPeiR9BlH/4b/7IVOsqJ8HacBlM8DzwQ2UwPPBDZTA88ENlMDzwQ2UwPPB
-        DZTA88ENlMDzwQ2UwPPBDZTA88ENlMDzwQ2UwPPBDZTA88ENlMDzwQ2UwPPBDZTA88ENlMDzSQPr4tj5
-        SJlYFsfOR8rEsjh2PlImlsWxHcdxHMdxSmg0vgEqe17i3VMrAQAAAABJRU5ErkJggg==
-</value>
-  </data>
+  <metadata name="HoaDon.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="NguoiTao.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="LoaiPhieu.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="GiaTri.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>
