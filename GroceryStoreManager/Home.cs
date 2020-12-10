@@ -60,14 +60,8 @@ namespace GroceryStoreManager
 
         private void TileBanHang_Click(object sender, EventArgs e)
         {
-            if (!panel.Controls.Contains(GroceryStoreManager.BanHang.Instance))
-            {
-                panel.Controls.Add(GroceryStoreManager.BanHang.Instance);
-                GroceryStoreManager.BanHang.Instance.Dock = DockStyle.Fill;
-                GroceryStoreManager.BanHang.Instance.BringToFront();
-            }
-            else
-                GroceryStoreManager.BanHang.Instance.BringToFront();
+            BanHang form = new BanHang();
+            form.Show();
         }
 
         private void TileGiaoDich_Click(object sender, EventArgs e)
@@ -92,6 +86,18 @@ namespace GroceryStoreManager
             }
             else
                 GroceryStoreManager.NhapHang.Instance.BringToFront();
+        }
+
+        private void TileQLHang_Click(object sender, EventArgs e)
+        {
+            if (!panel.Controls.Contains(GroceryStoreManager.QLHang.Instance))
+            {
+                panel.Controls.Add(GroceryStoreManager.QLHang.Instance);
+                GroceryStoreManager.QLHang.Instance.Dock = DockStyle.Fill;
+                GroceryStoreManager.QLHang.Instance.BringToFront();
+            }
+            else
+                GroceryStoreManager.QLHang.Instance.BringToFront();
         }
     }
 }

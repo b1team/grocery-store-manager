@@ -10,19 +10,11 @@ using System.Windows.Forms;
 
 namespace GroceryStoreManager
 {
-    public partial class DangNhap : MetroFramework.Forms.MetroForm
+    public partial class ChiTietHoaDon : MetroFramework.Forms.MetroForm
     {
-        public DangNhap()
+        public ChiTietHoaDon()
         {
             InitializeComponent();
-        }
-
-        private void lbDangKy_Click(object sender, EventArgs e)
-        {
-            DangKy form = new DangKy();
-            form.Show();
-            this.BringToFront();
-            this.Hide();
         }
     }
 }
