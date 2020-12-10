@@ -35,6 +35,7 @@
             this.TileBanHang = new MetroFramework.Controls.MetroTile();
             this.TileGiaoDich = new MetroFramework.Controls.MetroTile();
             this.TileNhapHang = new MetroFramework.Controls.MetroTile();
+            this.TileQLHang = new MetroFramework.Controls.MetroTile();
             this.SuspendLayout();
             // 
             // DonHang
@@ -122,11 +123,25 @@
             this.TileNhapHang.UseSelectable = true;
             this.TileNhapHang.Click += new System.EventHandler(this.TileNhapHang_Click);
             // 
+            // TileQLHang
+            // 
+            this.TileQLHang.ActiveControl = null;
+            this.TileQLHang.Location = new System.Drawing.Point(998, 63);
+            this.TileQLHang.Name = "TileQLHang";
+            this.TileQLHang.Size = new System.Drawing.Size(176, 90);
+            this.TileQLHang.Style = MetroFramework.MetroColorStyle.Orange;
+            this.TileQLHang.TabIndex = 8;
+            this.TileQLHang.Text = "Quản Lý Hàng";
+            this.TileQLHang.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.TileQLHang.UseSelectable = true;
+            this.TileQLHang.Click += new System.EventHandler(this.TileQLHang_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1600, 900);
+            this.Controls.Add(this.TileQLHang);
             this.Controls.Add(this.TileNhapHang);
             this.Controls.Add(this.TileGiaoDich);
             this.Controls.Add(this.TileBanHang);
@@ -149,6 +164,7 @@
         private MetroFramework.Controls.MetroTile TileBanHang;
         private MetroFramework.Controls.MetroTile TileGiaoDich;
         private MetroFramework.Controls.MetroTile TileNhapHang;
+        private MetroFramework.Controls.MetroTile TileQLHang;
     }
 }
 
