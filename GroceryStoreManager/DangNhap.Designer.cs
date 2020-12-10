@@ -56,7 +56,7 @@
             this.metroTextBox2.Location = new System.Drawing.Point(154, 234);
             this.metroTextBox2.MaxLength = 32767;
             this.metroTextBox2.Name = "metroTextBox2";
-            this.metroTextBox2.PasswordChar = '*';
+            this.metroTextBox2.PasswordChar = '●';
             this.metroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox2.SelectedText = "";
             this.metroTextBox2.SelectionLength = 0;
@@ -65,6 +65,7 @@
             this.metroTextBox2.Size = new System.Drawing.Size(266, 39);
             this.metroTextBox2.TabIndex = 1;
             this.metroTextBox2.UseSelectable = true;
+            this.metroTextBox2.UseSystemPasswordChar = true;
             this.metroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -166,6 +167,7 @@
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.metroTextBox1);
             this.Controls.Add(this.metroTextBox2);
+            this.MaximizeBox = false;
             this.Name = "DangNhap";
             this.Text = "Đăng Nhập";
             this.ResumeLayout(false);
