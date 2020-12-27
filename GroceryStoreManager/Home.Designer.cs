@@ -36,6 +36,7 @@
             this.TileGiaoDich = new MetroFramework.Controls.MetroTile();
             this.TileNhapHang = new MetroFramework.Controls.MetroTile();
             this.TileQLHang = new MetroFramework.Controls.MetroTile();
+            this.TileQLHoaDon = new MetroFramework.Controls.MetroTile();
             this.SuspendLayout();
             // 
             // DonHang
@@ -136,11 +137,28 @@
             this.TileQLHang.UseSelectable = true;
             this.TileQLHang.Click += new System.EventHandler(this.TileQLHang_Click);
             // 
+            // TileQLHoaDon
+            // 
+            this.TileQLHoaDon.ActiveControl = null;
+            this.TileQLHoaDon.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.TileQLHoaDon.Location = new System.Drawing.Point(1191, 63);
+            this.TileQLHoaDon.Name = "TileQLHoaDon";
+            this.TileQLHoaDon.Size = new System.Drawing.Size(176, 90);
+            this.TileQLHoaDon.Style = MetroFramework.MetroColorStyle.Green;
+            this.TileQLHoaDon.TabIndex = 9;
+            this.TileQLHoaDon.Text = "Quản Lý Hóa Đơn";
+            this.TileQLHoaDon.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.TileQLHoaDon.UseCustomForeColor = true;
+            this.TileQLHoaDon.UseSelectable = true;
+            this.TileQLHoaDon.UseStyleColors = true;
+            this.TileQLHoaDon.Click += new System.EventHandler(this.TileQLHoaDon_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1600, 900);
+            this.Controls.Add(this.TileQLHoaDon);
             this.Controls.Add(this.TileQLHang);
             this.Controls.Add(this.TileNhapHang);
             this.Controls.Add(this.TileGiaoDich);
@@ -165,6 +183,7 @@
         private MetroFramework.Controls.MetroTile TileGiaoDich;
         private MetroFramework.Controls.MetroTile TileNhapHang;
         private MetroFramework.Controls.MetroTile TileQLHang;
+        private MetroFramework.Controls.MetroTile TileQLHoaDon;
     }
 }
 

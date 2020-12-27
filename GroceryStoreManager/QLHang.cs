@@ -26,5 +26,10 @@ namespace GroceryStoreManager
         {
             InitializeComponent();
         }
+
+        private void QLHang_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

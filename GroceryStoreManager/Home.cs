@@ -99,5 +99,17 @@ namespace GroceryStoreManager
             else
                 GroceryStoreManager.QLHang.Instance.BringToFront();
         }
+
+        private void TileQLHoaDon_Click(object sender, EventArgs e)
+        {
+            if (!panel.Controls.Contains(GroceryStoreManager.QLHoaDon.Instance))
+            {
+                panel.Controls.Add(GroceryStoreManager.QLHoaDon.Instance);
+                GroceryStoreManager.QLHoaDon.Instance.Dock = DockStyle.Fill;
+                GroceryStoreManager.QLHoaDon.Instance.BringToFront();
+            }
+            else
+                GroceryStoreManager.QLHoaDon.Instance.BringToFront();
+        }
     }
 }
