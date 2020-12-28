@@ -43,14 +43,16 @@ namespace GroceryStoreManager
 
         private void DonHang_Click(object sender, EventArgs e)
         {
-            if (!panel.Controls.Contains(GroceryStoreManager.DonHang.Instance))
+            if (Application.OpenForms["NhapHang"] != null)
             {
-                panel.Controls.Add(GroceryStoreManager.DonHang.Instance);
-                GroceryStoreManager.DonHang.Instance.Dock = DockStyle.Fill;
-                GroceryStoreManager.DonHang.Instance.BringToFront();
+                Application.OpenForms["NhapHang"].BringToFront();
             }
             else
-                GroceryStoreManager.DonHang.Instance.BringToFront();
+            {
+                NhapHang form = new NhapHang();
+                form.Show();
+            }
+            
         }
 
         private void TileNhaCungCap_Click(object sender, EventArgs e)
