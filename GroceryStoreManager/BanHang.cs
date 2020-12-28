@@ -7,13 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GroceryStoreManager.Domains;
 
 namespace GroceryStoreManager
 {
     public partial class BanHang : MetroFramework.Forms.MetroForm
     {
+        private NguoiDung thuNgan;
+        private Quyen quyen;
         private List<Model.BanHang> SelectedItems = new List<Model.BanHang>();
         private List<Model.BanHang> Items = new List<Model.BanHang>();
+
+        internal NguoiDung ThuNgan { get => thuNgan; set => thuNgan = value; }
+        internal Quyen Quyen { get => quyen; set => quyen = value; }
+
         public BanHang()
         {
             InitializeComponent();
