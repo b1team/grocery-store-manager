@@ -89,6 +89,7 @@
             // 
             // MaPhieu
             // 
+            this.MaPhieu.DataPropertyName = "MaPhieu";
             this.MaPhieu.HeaderText = "Mã Phiếu";
             this.MaPhieu.Name = "MaPhieu";
             this.MaPhieu.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -96,11 +97,13 @@
             // 
             // NgayBan
             // 
+            this.NgayBan.DataPropertyName = "NgayBan";
             this.NgayBan.HeaderText = "Ngày Bán";
             this.NgayBan.Name = "NgayBan";
             // 
             // NvBanHang
             // 
+            this.NvBanHang.DataPropertyName = "NvBanHang";
             this.NvBanHang.HeaderText = "Nhân viên bán hàng";
             this.NvBanHang.Name = "NvBanHang";
             this.NvBanHang.Width = 150;
@@ -108,6 +111,7 @@
             // TongTien
             // 
             this.TongTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TongTien.DataPropertyName = "TongTien";
             this.TongTien.HeaderText = "Tổng tiền";
             this.TongTien.Name = "TongTien";
             // 
@@ -118,6 +122,7 @@
             this.Controls.Add(this.GridDonHang);
             this.Name = "DonHang";
             this.Size = new System.Drawing.Size(1554, 704);
+            this.Load += new System.EventHandler(this.DonHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridDonHang)).EndInit();
             this.ResumeLayout(false);
 

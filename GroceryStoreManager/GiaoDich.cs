@@ -31,5 +31,16 @@ namespace GroceryStoreManager
         {
 
         }
+
+        private void GiaoDich_Load(object sender, EventArgs e)
+        {
+            List<Model.GiaoDich> data = new List<Model.GiaoDich>();
+            data.Add(new Model.GiaoDich("Hoa don1", "tutung", "thu", "12"));
+            data.Add(new Model.GiaoDich("Hoa don2", "tu", "chi", "13"));
+            data.Add(new Model.GiaoDich("Hoa don3", "ngoc", "thu", "14"));
+            data.Add(new Model.GiaoDich("Hoa don4", "vuong", "chi", "15"));
+            GridGiaoDich.DataSource = new List<Model.GiaoDich>();
+            GridGiaoDich.DataSource = data;
+        }
     }
 }

@@ -104,6 +104,13 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\BanHang.cs" />
+    <Compile Include="Model\DonHang.cs" />
+    <Compile Include="Model\GiaoDich.cs" />
+    <Compile Include="Model\Hang.cs" />
+    <Compile Include="Model\HoaDon.cs" />
+    <Compile Include="Model\NhaCungCap.cs" />
+    <Compile Include="Model\NhapHang.cs" />
     <Compile Include="Migrations\202012271823598_Init db.cs" />
     <Compile Include="Migrations\202012271823598_Init db.designer.cs">
       <DependentUpon>202012271823598_Init db.cs</DependentUpon>
@@ -151,6 +158,12 @@
     <Compile Include="ChiTietHoaDon.Designer.cs">
       <DependentUpon>ChiTietHoaDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="QLHoaDon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QLHoaDon.Designer.cs">
+      <DependentUpon>QLHoaDon.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BanHang.resx">
       <DependentUpon>BanHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChiTietHoaDon.resx">
       <DependentUpon>ChiTietHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLHoaDon.resx">
+      <DependentUpon>QLHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
