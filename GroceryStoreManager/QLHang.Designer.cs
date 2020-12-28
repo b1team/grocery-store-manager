@@ -34,18 +34,17 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GridQLHang = new MetroFramework.Controls.MetroGrid();
             this.btnSave = new MetroFramework.Controls.MetroButton();
+            this.matHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.maHangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenHangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dangKinhDoanhDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.soLuongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.matHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.GridQLHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.matHangBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // GridQLHang
             // 
-            this.GridQLHang.AllowUserToAddRows = false;
             this.GridQLHang.AllowUserToResizeRows = false;
             this.GridQLHang.AutoGenerateColumns = false;
             this.GridQLHang.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -110,6 +109,10 @@
             this.btnSave.UseStyleColors = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // matHangBindingSource
+            // 
+            this.matHangBindingSource.DataSource = typeof(GroceryStoreManager.Domains.MatHang);
+            // 
             // maHangDataGridViewTextBoxColumn
             // 
             this.maHangDataGridViewTextBoxColumn.DataPropertyName = "MaHang";
@@ -123,7 +126,6 @@
             this.tenHangDataGridViewTextBoxColumn.DataPropertyName = "TenHang";
             this.tenHangDataGridViewTextBoxColumn.HeaderText = "Tên Hàng";
             this.tenHangDataGridViewTextBoxColumn.Name = "tenHangDataGridViewTextBoxColumn";
-            this.tenHangDataGridViewTextBoxColumn.ReadOnly = true;
             this.tenHangDataGridViewTextBoxColumn.Width = 200;
             // 
             // dangKinhDoanhDataGridViewCheckBoxColumn
@@ -140,10 +142,6 @@
             this.soLuongDataGridViewTextBoxColumn.HeaderText = "Số Lượng";
             this.soLuongDataGridViewTextBoxColumn.Name = "soLuongDataGridViewTextBoxColumn";
             this.soLuongDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // matHangBindingSource
-            // 
-            this.matHangBindingSource.DataSource = typeof(GroceryStoreManager.Domains.MatHang);
             // 
             // QLHang
             // 
