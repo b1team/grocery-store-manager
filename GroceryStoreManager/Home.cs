@@ -85,14 +85,14 @@ namespace GroceryStoreManager
 
         private void TileNhapHang_Click(object sender, EventArgs e)
         {
-            if (!panel.Controls.Contains(GroceryStoreManager.NhapHang.Instance))
+            if (!panel.Controls.Contains(GroceryStoreManager.QLPhieuNhap.Instance))
             {
-                panel.Controls.Add(GroceryStoreManager.NhapHang.Instance);
-                GroceryStoreManager.NhapHang.Instance.Dock = DockStyle.Fill;
-                GroceryStoreManager.NhapHang.Instance.BringToFront();
+                panel.Controls.Add(GroceryStoreManager.QLPhieuNhap.Instance);
+                GroceryStoreManager.QLPhieuNhap.Instance.Dock = DockStyle.Fill;
+                GroceryStoreManager.QLPhieuNhap.Instance.BringToFront();
             }
             else
-                GroceryStoreManager.NhapHang.Instance.BringToFront();
+                GroceryStoreManager.QLPhieuNhap.Instance.BringToFront();
         }
 
         private void TileQLHang_Click(object sender, EventArgs e)

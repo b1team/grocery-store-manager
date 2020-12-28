@@ -131,11 +131,11 @@
     <Compile Include="NhaCungCap.Designer.cs">
       <DependentUpon>NhaCungCap.cs</DependentUpon>
     </Compile>
-    <Compile Include="NhapHang.cs">
+    <Compile Include="QLPhieuNhap.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="NhapHang.Designer.cs">
-      <DependentUpon>NhapHang.cs</DependentUpon>
+    <Compile Include="QLPhieuNhap.Designer.cs">
+      <DependentUpon>QLPhieuNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -196,8 +196,8 @@
     <EmbeddedResource Include="NhaCungCap.resx">
       <DependentUpon>NhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NhapHang.resx">
-      <DependentUpon>NhapHang.cs</DependentUpon>
+    <EmbeddedResource Include="QLPhieuNhap.resx">
+      <DependentUpon>QLPhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -221,7 +221,9 @@
       <DependentUpon>QLHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\GroceryStoreManager.Domains.ChiTietPN.datasource" />
     <None Include="Properties\DataSources\GroceryStoreManager.Domains.NhaCungCap.datasource" />
+    <None Include="Properties\DataSources\GroceryStoreManager.Domains.PhieuNhap.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
