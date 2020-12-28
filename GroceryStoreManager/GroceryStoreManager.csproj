@@ -108,10 +108,13 @@
     <Compile Include="Migrations\202012271823598_Init db.designer.cs">
       <DependentUpon>202012271823598_Init db.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Migrations\202012280247255_Move MaNCC from MatHang to PhieuNhap.cs" />
     <Compile Include="Migrations\202012280247255_Move MaNCC from MatHang to PhieuNhap.designer.cs">
       <DependentUpon>202012280247255_Move MaNCC from MatHang to PhieuNhap.cs</DependentUpon>
     </Compile>
+=======
+>>>>>>> 1ff3d1caaa158746bb19c7413e48bdd25a6a9141
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NhaCungCap.cs">
       <SubType>UserControl</SubType>
@@ -163,9 +166,12 @@
     <EmbeddedResource Include="Migrations\202012271823598_Init db.resx">
       <DependentUpon>202012271823598_Init db.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="Migrations\202012280247255_Move MaNCC from MatHang to PhieuNhap.resx">
       <DependentUpon>202012280247255_Move MaNCC from MatHang to PhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
+=======
+>>>>>>> 1ff3d1caaa158746bb19c7413e48bdd25a6a9141
     <EmbeddedResource Include="NhaCungCap.resx">
       <DependentUpon>NhaCungCap.cs</DependentUpon>
     </EmbeddedResource>

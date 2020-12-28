@@ -8,7 +8,6 @@ namespace GroceryStoreManager.Domains
     {
         [Key]
         public int MaHang { get; set; }
-
         [Required]
         [MaxLength(200, ErrorMessage = "Tên mặt hàng chỉ được tối đa 200 ký tự")]
         public string TenHang { get; set; }
@@ -16,6 +15,5 @@ namespace GroceryStoreManager.Domains
         public int SoLuong { get; set; }
         [Required]
         public bool DangKinhDoanh { get; set; }
-
     }
 }
