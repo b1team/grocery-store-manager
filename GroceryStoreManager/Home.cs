@@ -50,6 +50,8 @@ namespace GroceryStoreManager
             else
             {
                 NhapHang form = new NhapHang();
+                form.NguoiDung = nguoiDung;
+                form.Quyen = quuyenNguoiDung;
                 form.Show();
             }
             

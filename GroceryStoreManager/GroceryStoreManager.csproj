@@ -113,7 +113,7 @@
     <Compile Include="Migrations\202012281213162_Added giaban to MaHang.designer.cs">
       <DependentUpon>202012281213162_Added giaban to MaHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\BanHang.cs" />
+    <Compile Include="Model\ChiTietPhieuNhap.cs" />
     <Compile Include="Model\DonHang.cs" />
     <Compile Include="Model\GiaoDich.cs" />
     <Compile Include="Model\Hang.cs" />
