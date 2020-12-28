@@ -62,19 +62,11 @@
             this.GridBanHang1 = new MetroFramework.Controls.MetroGrid();
             this.lbtest1 = new MetroFramework.Controls.MetroLabel();
             this.lbtest2 = new MetroFramework.Controls.MetroLabel();
-            this.select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.MaHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mhang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DGIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NhaCungCap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GiaBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.GridBanHang2)).BeginInit();
             this.metroPanel1.SuspendLayout();
             this.metroPanel2.SuspendLayout();
@@ -99,14 +91,6 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.GridBanHang2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.GridBanHang2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridBanHang2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.mhang,
-            this.tHang,
-            this.DGIA,
-            this.NhaCungCap,
-            this.sluong,
-            this.tTien,
-            this.GiaBan});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -134,7 +118,7 @@
             this.GridBanHang2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridBanHang2.Size = new System.Drawing.Size(1089, 272);
             this.GridBanHang2.TabIndex = 12;
-            this.GridBanHang2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridBanHang2_CellContentClick);
+            this.GridBanHang2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.handle_cellclicks);
             // 
             // txtTimKiem
             // 
@@ -497,7 +481,6 @@
             this.GridBanHang1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.GridBanHang1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridBanHang1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.select,
             this.MaHang,
             this.TenHang,
             this.DonGia,
@@ -547,14 +530,6 @@
             this.lbtest2.Size = new System.Drawing.Size(0, 0);
             this.lbtest2.TabIndex = 18;
             // 
-            // select
-            // 
-            this.select.DataPropertyName = "select";
-            this.select.HeaderText = "Chọn";
-            this.select.Name = "select";
-            this.select.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.select.Width = 50;
-            // 
             // MaHang
             // 
             this.MaHang.DataPropertyName = "MaHang";
@@ -590,58 +565,6 @@
             this.ThanhTien.DataPropertyName = "ThanhTien";
             this.ThanhTien.HeaderText = "Thành Tiền";
             this.ThanhTien.Name = "ThanhTien";
-            // 
-            // mhang
-            // 
-            this.mhang.DataPropertyName = "mahang";
-            this.mhang.HeaderText = "Mã Hàng";
-            this.mhang.Name = "mhang";
-            this.mhang.ReadOnly = true;
-            this.mhang.Width = 150;
-            // 
-            // tHang
-            // 
-            this.tHang.DataPropertyName = "tenhang";
-            this.tHang.HeaderText = "Tên Hàng";
-            this.tHang.Name = "tHang";
-            this.tHang.ReadOnly = true;
-            this.tHang.Width = 200;
-            // 
-            // DGIA
-            // 
-            this.DGIA.DataPropertyName = "dongia";
-            this.DGIA.HeaderText = "Đơn Giá";
-            this.DGIA.Name = "DGIA";
-            this.DGIA.ReadOnly = true;
-            this.DGIA.Width = 200;
-            // 
-            // NhaCungCap
-            // 
-            this.NhaCungCap.DataPropertyName = "NhaCungCap";
-            this.NhaCungCap.HeaderText = "Nhà Cung Cấp";
-            this.NhaCungCap.Name = "NhaCungCap";
-            this.NhaCungCap.ReadOnly = true;
-            // 
-            // sluong
-            // 
-            this.sluong.DataPropertyName = "SoLuong";
-            this.sluong.HeaderText = "Số Lượng";
-            this.sluong.Name = "sluong";
-            this.sluong.ReadOnly = true;
-            // 
-            // tTien
-            // 
-            this.tTien.DataPropertyName = "ThanhTien";
-            this.tTien.HeaderText = "Thành Tiền";
-            this.tTien.Name = "tTien";
-            this.tTien.ReadOnly = true;
-            // 
-            // GiaBan
-            // 
-            this.GiaBan.DataPropertyName = "GiaBan";
-            this.GiaBan.HeaderText = "Giá Bán";
-            this.GiaBan.Name = "GiaBan";
-            this.GiaBan.ReadOnly = true;
             // 
             // BanHang
             // 
@@ -701,18 +624,10 @@
         private MetroFramework.Controls.MetroGrid GridBanHang1;
         private MetroFramework.Controls.MetroLabel lbtest1;
         private MetroFramework.Controls.MetroLabel lbtest2;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn select;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mhang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tHang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGIA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NhaCungCap;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sluong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tTien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GiaBan;
     }
 }

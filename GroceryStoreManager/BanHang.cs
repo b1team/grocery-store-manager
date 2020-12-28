@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GroceryStoreManager.Domains;
+using System.Data.Entity;
 
 namespace GroceryStoreManager
 {
     public partial class BanHang : MetroFramework.Forms.MetroForm
     {
+        private DatabaseContext session;
         private NguoiDung thuNgan;
         private Quyen quyen;
         private List<Model.BanHang> SelectedItems = new List<Model.BanHang>();
@@ -24,11 +26,12 @@ namespace GroceryStoreManager
         public BanHang()
         {
             InitializeComponent();
+            session = new DatabaseContext();
         }
 
         public void HoaDon()
         {
-            lbNhanVienThuNgan.Text = "tungnt";
+            lbNhanVienThuNgan.Text = thuNgan.TenNguoiDung;
             int TongTienHang = 140000;
             Double GiamGia = 10;
             int KhachCanTra = (int)(TongTienHang * ((100 - GiamGia) / 100));
@@ -46,14 +49,7 @@ namespace GroceryStoreManager
 
         private void BanHang_Load(object sender, EventArgs e)
         {
-
-            List<Model.Hang> data = new List<Model.Hang>();
-            data.Add(new Model.Hang("1", "hang 1", 2, "nha cung cap 1", 1200));
-            data.Add(new Model.Hang("2", "hang 2", 3, "nha cung cap 2", 1300));
-            data.Add(new Model.Hang("3", "hang 3", 4, "nha cung cap 3", 1400));
-            data.Add(new Model.Hang("4", "hang 4", 5, "nha cung cap 4", 1500));
-            GridBanHang2.DataSource = new List<Model.BanHang>();
-            GridBanHang2.DataSource = data;
+            session.DsMatHang.Load();
             HoaDon();
         }
 
@@ -71,7 +67,7 @@ namespace GroceryStoreManager
         }
 
 
-        private void GridBanHang2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void handle_cellclicks(object sender, DataGridViewCellEventArgs e)
         { 
             DataGridViewRow row = GridBanHang2.Rows[e.RowIndex];
             var item = new Model.BanHang(Convert.ToString(row.Cells[0].Value), Convert.ToString(row.Cells[1].Value), Convert.ToInt32(row.Cells[2].Value), 1);
