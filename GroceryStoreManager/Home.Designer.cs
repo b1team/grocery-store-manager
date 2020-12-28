@@ -34,7 +34,7 @@
             this.TileNhaCungCap = new MetroFramework.Controls.MetroTile();
             this.TileBanHang = new MetroFramework.Controls.MetroTile();
             this.TileGiaoDich = new MetroFramework.Controls.MetroTile();
-            this.TileNhapHang = new MetroFramework.Controls.MetroTile();
+            this.TileQLPhieuNhap = new MetroFramework.Controls.MetroTile();
             this.TileQLHang = new MetroFramework.Controls.MetroTile();
             this.TileQLHoaDon = new MetroFramework.Controls.MetroTile();
             this.SuspendLayout();
@@ -112,17 +112,17 @@
             this.TileGiaoDich.UseSelectable = true;
             this.TileGiaoDich.Click += new System.EventHandler(this.TileGiaoDich_Click);
             // 
-            // TileNhapHang
+            // TileQLPhieuNhap
             // 
-            this.TileNhapHang.ActiveControl = null;
-            this.TileNhapHang.Location = new System.Drawing.Point(802, 63);
-            this.TileNhapHang.Name = "TileNhapHang";
-            this.TileNhapHang.Size = new System.Drawing.Size(176, 90);
-            this.TileNhapHang.TabIndex = 7;
-            this.TileNhapHang.Text = "Nhập Hàng";
-            this.TileNhapHang.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
-            this.TileNhapHang.UseSelectable = true;
-            this.TileNhapHang.Click += new System.EventHandler(this.TileNhapHang_Click);
+            this.TileQLPhieuNhap.ActiveControl = null;
+            this.TileQLPhieuNhap.Location = new System.Drawing.Point(802, 63);
+            this.TileQLPhieuNhap.Name = "TileQLPhieuNhap";
+            this.TileQLPhieuNhap.Size = new System.Drawing.Size(176, 90);
+            this.TileQLPhieuNhap.TabIndex = 7;
+            this.TileQLPhieuNhap.Text = "Quản lý phiếu nhập";
+            this.TileQLPhieuNhap.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.TileQLPhieuNhap.UseSelectable = true;
+            this.TileQLPhieuNhap.Click += new System.EventHandler(this.TileNhapHang_Click);
             // 
             // TileQLHang
             // 
@@ -160,7 +160,7 @@
             this.ClientSize = new System.Drawing.Size(1600, 900);
             this.Controls.Add(this.TileQLHoaDon);
             this.Controls.Add(this.TileQLHang);
-            this.Controls.Add(this.TileNhapHang);
+            this.Controls.Add(this.TileQLPhieuNhap);
             this.Controls.Add(this.TileGiaoDich);
             this.Controls.Add(this.TileBanHang);
             this.Controls.Add(this.TileNhaCungCap);
@@ -181,7 +181,7 @@
         private MetroFramework.Controls.MetroTile TileNhaCungCap;
         private MetroFramework.Controls.MetroTile TileBanHang;
         private MetroFramework.Controls.MetroTile TileGiaoDich;
-        private MetroFramework.Controls.MetroTile TileNhapHang;
+        private MetroFramework.Controls.MetroTile TileQLPhieuNhap;
         private MetroFramework.Controls.MetroTile TileQLHang;
         private MetroFramework.Controls.MetroTile TileQLHoaDon;
     }
