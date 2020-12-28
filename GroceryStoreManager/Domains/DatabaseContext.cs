@@ -19,6 +19,7 @@ namespace GroceryStoreManager.Domains
                 .HasKey(c => new { c.MaHD, c.MaHang });
             modelBuilder.Entity<ChiTietPN>()
                .HasKey(c => new { c.MaPhieuNhap, c.MaHang });
+            Database.SetInitializer<DatabaseContext>(null);
         }
         public DbSet<Quyen> DsQuyen { get; set; }
         public DbSet<NguoiDung> DsNguoiDung { get; set; }
