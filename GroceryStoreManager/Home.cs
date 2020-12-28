@@ -7,11 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GroceryStoreManager.Domains;
 
 namespace GroceryStoreManager
 {
     public partial class Home : MetroFramework.Forms.MetroForm
     {
+        private NguoiDung nguoiDung;
+        private Quyen quuyenNguoiDung;
+
+        internal NguoiDung NguoiDung { get => nguoiDung; set => nguoiDung = value; }
+        internal Quyen QuuyenNguoiDung { get => quuyenNguoiDung; set => quuyenNguoiDung = value; }
+
         public Home()
         {
             InitializeComponent();
