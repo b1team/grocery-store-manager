@@ -28,23 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GridQLHang = new MetroFramework.Controls.MetroGrid();
-            this.MaHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NhaCungCap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GiaBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSave = new MetroFramework.Controls.MetroButton();
+            this.maHangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenHangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dangKinhDoanhDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.soLuongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.matHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.GridQLHang)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.matHangBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // GridQLHang
             // 
+            this.GridQLHang.AllowUserToAddRows = false;
             this.GridQLHang.AllowUserToResizeRows = false;
+            this.GridQLHang.AutoGenerateColumns = false;
             this.GridQLHang.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.GridQLHang.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.GridQLHang.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.GridQLHang.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.GridQLHang.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -57,11 +62,11 @@
             this.GridQLHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.GridQLHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridQLHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaHang,
-            this.TenHang,
-            this.SoLuong,
-            this.NhaCungCap,
-            this.GiaBan});
+            this.maHangDataGridViewTextBoxColumn,
+            this.tenHangDataGridViewTextBoxColumn,
+            this.dangKinhDoanhDataGridViewCheckBoxColumn,
+            this.soLuongDataGridViewTextBoxColumn});
+            this.GridQLHang.DataSource = this.matHangBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -86,52 +91,71 @@
             this.GridQLHang.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.GridQLHang.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.GridQLHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridQLHang.Size = new System.Drawing.Size(1554, 704);
+            this.GridQLHang.Size = new System.Drawing.Size(1554, 650);
             this.GridQLHang.TabIndex = 0;
             // 
-            // MaHang
+            // btnSave
             // 
-            this.MaHang.DataPropertyName = "MaHang";
-            this.MaHang.HeaderText = "Mã Hàng";
-            this.MaHang.Name = "MaHang";
-            this.MaHang.Width = 125;
+            this.btnSave.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(1348, 656);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(203, 45);
+            this.btnSave.Style = MetroFramework.MetroColorStyle.Red;
+            this.btnSave.TabIndex = 11;
+            this.btnSave.Text = "LƯU";
+            this.btnSave.UseCustomBackColor = true;
+            this.btnSave.UseCustomForeColor = true;
+            this.btnSave.UseSelectable = true;
+            this.btnSave.UseStyleColors = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // TenHang
+            // maHangDataGridViewTextBoxColumn
             // 
-            this.TenHang.DataPropertyName = "TenHang";
-            this.TenHang.HeaderText = "Tên Hàng";
-            this.TenHang.Name = "TenHang";
-            this.TenHang.Width = 150;
+            this.maHangDataGridViewTextBoxColumn.DataPropertyName = "MaHang";
+            this.maHangDataGridViewTextBoxColumn.HeaderText = "Mã Hàng";
+            this.maHangDataGridViewTextBoxColumn.Name = "maHangDataGridViewTextBoxColumn";
+            this.maHangDataGridViewTextBoxColumn.ReadOnly = true;
+            this.maHangDataGridViewTextBoxColumn.Width = 200;
             // 
-            // SoLuong
+            // tenHangDataGridViewTextBoxColumn
             // 
-            this.SoLuong.DataPropertyName = "SoLuong";
-            this.SoLuong.HeaderText = "Số Lượng";
-            this.SoLuong.Name = "SoLuong";
+            this.tenHangDataGridViewTextBoxColumn.DataPropertyName = "TenHang";
+            this.tenHangDataGridViewTextBoxColumn.HeaderText = "Tên Hàng";
+            this.tenHangDataGridViewTextBoxColumn.Name = "tenHangDataGridViewTextBoxColumn";
+            this.tenHangDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tenHangDataGridViewTextBoxColumn.Width = 200;
             // 
-            // NhaCungCap
+            // dangKinhDoanhDataGridViewCheckBoxColumn
             // 
-            this.NhaCungCap.DataPropertyName = "NhaCungCap";
-            this.NhaCungCap.HeaderText = "Nhà Cung Cấp";
-            this.NhaCungCap.Name = "NhaCungCap";
-            this.NhaCungCap.Width = 200;
+            this.dangKinhDoanhDataGridViewCheckBoxColumn.DataPropertyName = "DangKinhDoanh";
+            this.dangKinhDoanhDataGridViewCheckBoxColumn.HeaderText = "Đang Kinh Doanh";
+            this.dangKinhDoanhDataGridViewCheckBoxColumn.Name = "dangKinhDoanhDataGridViewCheckBoxColumn";
+            this.dangKinhDoanhDataGridViewCheckBoxColumn.Width = 150;
             // 
-            // GiaBan
+            // soLuongDataGridViewTextBoxColumn
             // 
-            this.GiaBan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.GiaBan.DataPropertyName = "GiaBan";
-            this.GiaBan.HeaderText = "Giá Bán";
-            this.GiaBan.Name = "GiaBan";
+            this.soLuongDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.soLuongDataGridViewTextBoxColumn.DataPropertyName = "SoLuong";
+            this.soLuongDataGridViewTextBoxColumn.HeaderText = "Số Lượng";
+            this.soLuongDataGridViewTextBoxColumn.Name = "soLuongDataGridViewTextBoxColumn";
+            this.soLuongDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // matHangBindingSource
+            // 
+            this.matHangBindingSource.DataSource = typeof(GroceryStoreManager.Domains.MatHang);
             // 
             // QLHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.GridQLHang);
             this.Name = "QLHang";
             this.Size = new System.Drawing.Size(1554, 704);
             this.Load += new System.EventHandler(this.QLHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridQLHang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.matHangBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -139,10 +163,11 @@
         #endregion
 
         private MetroFramework.Controls.MetroGrid GridQLHang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaHang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenHang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NhaCungCap;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GiaBan;
+        private System.Windows.Forms.BindingSource matHangBindingSource;
+        private MetroFramework.Controls.MetroButton btnSave;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maHangDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenHangDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dangKinhDoanhDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soLuongDataGridViewTextBoxColumn;
     }
 }

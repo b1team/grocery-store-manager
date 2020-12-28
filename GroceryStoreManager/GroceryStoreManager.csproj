@@ -221,6 +221,7 @@
       <DependentUpon>QLHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\GroceryStoreManager.Domains.MatHang.datasource" />
     <None Include="Properties\DataSources\GroceryStoreManager.Domains.ChiTietPN.datasource" />
     <None Include="Properties\DataSources\GroceryStoreManager.Domains.NhaCungCap.datasource" />
     <None Include="Properties\DataSources\GroceryStoreManager.Domains.PhieuNhap.datasource" />
