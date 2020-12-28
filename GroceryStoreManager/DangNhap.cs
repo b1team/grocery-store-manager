@@ -41,8 +41,13 @@ namespace GroceryStoreManager
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            var tenDangNhap = txtTenDangNhap.Text.Trim();
+            var tenDangNhap = txtTenDangNhap.Text.Trim().ToLower();
             var matKhau = txtMatKhau.Text;
+            if(tenDangNhap == "" || matKhau == "")
+            {
+                MessageBox.Show("Tên người dùng hoặc mật khẩu không được để trống", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             var query = (from u in db.DsNguoiDung join r in db.DsQuyen on u.MaQuyen equals r.MaQuyen where u.TenDangNhap == tenDangNhap where u.MatKhau == matKhau select new { u = u, r = r });
             try
             {
