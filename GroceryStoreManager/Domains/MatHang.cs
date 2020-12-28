@@ -14,6 +14,8 @@ namespace GroceryStoreManager.Domains
         [Required]
         public int SoLuong { get; set; }
         [Required]
+        public float GiaBan { get; set; }
+        [Required]
         public bool DangKinhDoanh { get; set; }
     }
 }
