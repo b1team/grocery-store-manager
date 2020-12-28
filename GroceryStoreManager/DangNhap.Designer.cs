@@ -33,8 +33,6 @@
             this.btnDangNhap = new MetroFramework.Controls.MetroButton();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.lbDangKy = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
             // 
             // txtMatKhau
@@ -132,36 +130,11 @@
             this.metroLabel2.Text = "Mật Khẩu";
             this.metroLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(177, 379);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(121, 19);
-            this.metroLabel3.TabIndex = 6;
-            this.metroLabel3.Text = "Chưa có tài khoản?";
-            // 
-            // lbDangKy
-            // 
-            this.lbDangKy.AutoSize = true;
-            this.lbDangKy.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lbDangKy.ForeColor = System.Drawing.Color.Red;
-            this.lbDangKy.Location = new System.Drawing.Point(304, 379);
-            this.lbDangKy.Name = "lbDangKy";
-            this.lbDangKy.Size = new System.Drawing.Size(60, 19);
-            this.lbDangKy.TabIndex = 7;
-            this.lbDangKy.Text = "Đăng ký";
-            this.lbDangKy.UseCustomBackColor = true;
-            this.lbDangKy.UseCustomForeColor = true;
-            this.lbDangKy.Click += new System.EventHandler(this.lbDangKy_Click);
-            // 
             // DangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(590, 470);
-            this.Controls.Add(this.lbDangKy);
-            this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.btnDangNhap);
@@ -172,7 +145,6 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DangNhap_FormClosing);
             this.Load += new System.EventHandler(this.DangNhap_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -183,7 +155,5 @@
         private MetroFramework.Controls.MetroButton btnDangNhap;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroLabel lbDangKy;
     }
 }

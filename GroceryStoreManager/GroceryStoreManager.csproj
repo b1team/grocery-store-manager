@@ -105,6 +105,10 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012281001260_Unique username.cs" />
+    <Compile Include="Migrations\202012281001260_Unique username.designer.cs">
+      <DependentUpon>202012281001260_Unique username.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\BanHang.cs" />
     <Compile Include="Model\DonHang.cs" />
     <Compile Include="Model\GiaoDich.cs" />
@@ -185,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012280247255_Move MaNCC from MatHang to PhieuNhap.resx">
       <DependentUpon>202012280247255_Move MaNCC from MatHang to PhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012281001260_Unique username.resx">
+      <DependentUpon>202012281001260_Unique username.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhaCungCap.resx">
       <DependentUpon>NhaCungCap.cs</DependentUpon>
