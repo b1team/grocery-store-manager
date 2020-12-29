@@ -31,13 +31,12 @@ namespace GroceryStoreManager
             session = new DatabaseContext();
         }
 
-        private void DanhSachMatHang()
+        private void LayDanhSachMatHang()
         {
             try
             {
-                session.DsMatHang.OrderByDescending(kinhdoanh => kinhdoanh.DangKinhDoanh).Load();
-                var filter = session.DsMatHang.Local.ToBindingList();
-                GridQLHang.DataSource = filter;
+                session.DsMatHang.OrderByDescending(hang => hang.DangKinhDoanh).Load();
+                GridQLHang.DataSource = session.DsMatHang.Local.ToBindingList();
             }
             catch (Exception)
             {
@@ -47,7 +46,7 @@ namespace GroceryStoreManager
 
         private void QLHang_Load(object sender, EventArgs e)
         {
-            DanhSachMatHang();
+            LayDanhSachMatHang();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -56,7 +55,7 @@ namespace GroceryStoreManager
             {
                 session.SaveChanges();
                 MessageBox.Show("Lưu thành công");
-                DanhSachMatHang();
+                LayDanhSachMatHang();
             }
             catch (Exception)
             {
