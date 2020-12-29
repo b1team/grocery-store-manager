@@ -35,8 +35,9 @@ namespace GroceryStoreManager
         {
             try
             {
-                session.DsMatHang.OrderByDescending(hang => hang.DangKinhDoanh).Load();
-                GridQLHang.DataSource = session.DsMatHang.Local.ToBindingList();
+                BindingSource data = new BindingSource();
+                data.DataSource = session.DsMatHang.OrderByDescending(hang => hang.DangKinhDoanh).ToList();
+                GridQLHang.DataSource = data;
             }
             catch (Exception)
             {
