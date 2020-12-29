@@ -28,7 +28,7 @@ namespace GroceryStoreManager
             session = new DatabaseContext();
         }
 
-        public void HoaDon()
+        public void GetDefaultValue()
         {
             float total = GridBanHang1.Rows.Cast<DataGridViewRow>()
                  .Sum(t => (float)(t.Cells[4].Value));
@@ -46,7 +46,7 @@ namespace GroceryStoreManager
 
         private void BanHang_Load(object sender, EventArgs e)
         {
-            HoaDon();
+            GetDefaultValue();
             lbNhanVienThuNgan.Text = thuNgan.TenNguoiDung;
         }
 
@@ -74,6 +74,7 @@ namespace GroceryStoreManager
             var item = new Model.ChiTietHoaDon(mahang, tenhang, 1, giaban);
 
             int rows = GridBanHang1.Rows.Count;
+
             var existed = false;
             for (int i = 0; i < rows; i++)
             {
@@ -107,19 +108,28 @@ namespace GroceryStoreManager
 
         private void TinhLaiTongTien(object sender, DataGridViewCellEventArgs e)
         {
+            DataGridViewRow row = GridBanHang2.Rows[e.RowIndex];
+            int mahang = Convert.ToInt32(row.Cells[0].Value);
+            var TongSoLuongHang = session.DsMatHang.Where(mathang => mathang.MaHang == mahang).Select(mathang => mathang.SoLuong).First();
             int rows = GridBanHang1.Rows.Count;
             for (int i = 0; i < rows; i++)
             {
                 DataGridViewRow row1 = GridBanHang1.Rows[i];
-                row1.Cells[4].Value = Model.ChiTietHoaDon.ThanhToan((float)row1.Cells[3].Value, (int)row1.Cells[2].Value);
+                int soluong = Convert.ToInt32(row1.Cells[2].Value);
+                if (soluong > Convert.ToInt32(TongSoLuongHang))
+                    row1.Cells[2].Value = Convert.ToInt32(TongSoLuongHang);
+                else if(soluong < 0)
+                    row1.Cells[2].Value = 0;
+
+                row1.Cells[4].Value = Model.ChiTietHoaDon.ThanhToan((float)Convert.ToDouble(row1.Cells[3].Value), Convert.ToInt32(row1.Cells[2].Value));
                 break;
             }
-            HoaDon();
+            GetDefaultValue();
         }
 
         private void GridBanHang1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            HoaDon();
+            GetDefaultValue();
         }
 
         private void txtKhachThanhToan_TextChanged(object sender, EventArgs e)
@@ -146,45 +156,28 @@ namespace GroceryStoreManager
             DateTime ThoiGianThanhToan = DateTime.Parse(datetime.Value.TimeOfDay.ToString());
             bool DaThanhToan = true;
             float TongTienHang = (float)Convert.ToDouble(lbTongTienHang.Text.Trim());
-            HoaDon hd = new HoaDon();
-            try
+            HoaDon hd = new HoaDon()
             {
-                hd.NgayTao = NgayTao;
-                hd.HanThanhToan = HanThanhToan;
-                hd.ThoiGianThanhToan = ThoiGianThanhToan;
-                hd.DaThanhToan = DaThanhToan;
-                hd.ThanhTien = TongTienHang;
+                NgayTao = NgayTao,
+                HanThanhToan = HanThanhToan,
+                ThoiGianThanhToan = ThoiGianThanhToan,
+                DaThanhToan = DaThanhToan,
+                ThanhTien = TongTienHang
+            };
 
-                session.DsHoaDon.Add(hd);
-                session.SaveChanges();
-            }
-            catch (Exception)
+            foreach (var item in SelectedItems)
             {
-                MessageBox.Show("Lỗi tạo hóa đơn!!!");
-                return;
-            }
-
-            try
-            {
-                var maHD = hd.MaHD;
-                foreach (var item in SelectedItems)
+                var hang = session.DsMatHang.Find(item.MaHang);
+                hang.SoLuong = hang.SoLuong - item.SoLuong;
+                ChiTietHD chitiethd = new ChiTietHD()
                 {
-                    ChiTietHD chitiethd = new ChiTietHD()
-                    {
-                        MaHD = maHD,
-                        MaHang = item.MaHang,
-                        SoLuong = item.SoLuong,
-                        DonGia = item.GiaBan,
-                        ThanhTien = item.ThanhTien
-                    };
-                    session.DsChiTietHD.Add(chitiethd);
-                }
-                session.SaveChanges();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Lỗi tạo chi tiết hóa đơn!!!");
-                return;
+                    SoLuong = item.SoLuong,
+                    DonGia = item.GiaBan,
+                    ThanhTien = item.ThanhTien
+                };
+                chitiethd.MatHang = hang;
+                chitiethd.HoaDon = hd;
+                session.DsChiTietHD.Add(chitiethd);
             }
             
         }
@@ -198,10 +191,11 @@ namespace GroceryStoreManager
                     try
                     {
                         ThanhToan();
+                        session.SaveChanges();
                         MessageBox.Show("Thanh Toán Thành Công!");
                         GridBanHang1.DataSource = null;
                         GridBanHang1.Refresh();
-                        HoaDon();
+                        GetDefaultValue();
                     }
                     catch (Exception)
                     {
