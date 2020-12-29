@@ -40,7 +40,7 @@ namespace GroceryStoreManager
                 return;
             }
             var matKhau = txtMatKhau.Text;
-            if (tenDangNhap.Length < 6)
+            if (matKhau.Length < 6)
             {
                 MessageBox.Show("Mật khẩu phải có ít nhất 6 kí tự", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -59,6 +59,7 @@ namespace GroceryStoreManager
             try
             {
                 db.SaveChanges();
+                MessageBox.Show($"{nguoiDung.MaNguoiDung}");
                 MessageBox.Show("Tạo người dùng thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch
