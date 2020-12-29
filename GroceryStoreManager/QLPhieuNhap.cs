@@ -35,8 +35,9 @@ namespace GroceryStoreManager
         {
             try
             {
-                session.DsPhieuNhap.Load();
-                GridPhieuNhap.DataSource = session.DsPhieuNhap.Local.ToBindingList();
+                BindingSource data = new BindingSource();
+                data.DataSource = session.DsPhieuNhap.OrderByDescending(phieunhap => phieunhap.NgayTao).ToList();
+                GridPhieuNhap.DataSource = data;
             }
             catch (Exception)
             {
