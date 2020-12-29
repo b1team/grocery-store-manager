@@ -6,36 +6,36 @@ using System.Threading.Tasks;
 
 namespace GroceryStoreManager.Model
 {
-    class BanHang
+    class ChiTietHoaDon
     {
-        public BanHang()
+        public ChiTietHoaDon()
         {
-            MaHang = "";
+            MaHang = 0;
             TenHang = "";
-            DonGia = 0;
             SoLuong = 0;
-            ThanhTien = DonGia * SoLuong;
+            GiaBan = 0;
+            ThanhTien = GiaBan * SoLuong;
         }
 
 
-        public BanHang( string MaHang, string TenHang, int DonGia, int SoLuong)
+        public ChiTietHoaDon( int MaHang, string TenHang, int SoLuong, int GiaBan)
         {
             this.MaHang = MaHang;
             this.TenHang = TenHang;
-            this.DonGia = DonGia;
+            this.GiaBan = GiaBan;
             this.SoLuong = SoLuong;
-            this.ThanhTien = DonGia * SoLuong;
+            this.ThanhTien = GiaBan * SoLuong;
         }
 
-        public string MaHang { get; set; }
+        public int MaHang { get; set; }
         public string TenHang { get; }
-        public int DonGia { get; set; }
+        public int GiaBan { get; set; }
         public int SoLuong { get;  set; }
         public int ThanhTien { get; set; }
 
-        public static int ThanhToan(int DonGia, int SoLuong)
+        public static int ThanhToan(int GiaBan, int SoLuong)
         {
-            return DonGia * SoLuong;
+            return GiaBan * SoLuong;
         }
     }
 }
