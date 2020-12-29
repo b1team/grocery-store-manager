@@ -31,7 +31,7 @@ namespace GroceryStoreManager
             session = new DatabaseContext();
         }
 
-        private void QLPhieuNhap_Load(object sender, EventArgs e)
+        public void LoadData()
         {
             try
             {
@@ -42,6 +42,11 @@ namespace GroceryStoreManager
             {
                 MessageBox.Show("Hệ thống đang được nâng cấp!!!");
             }
+        }
+
+        private void QLPhieuNhap_Load(object sender, EventArgs e)
+        {
+            LoadData();
         }
 
         private void GridChiTietPhieuNhap_CellValidated(object sender, DataGridViewCellEventArgs e)

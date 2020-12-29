@@ -31,7 +31,7 @@ namespace GroceryStoreManager
             session = new DatabaseContext();
         }
 
-        private void LayDanhSachMatHang()
+        public void LayDanhSachMatHang()
         {
             try
             {

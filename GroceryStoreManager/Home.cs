@@ -66,7 +66,11 @@ namespace GroceryStoreManager
                 GroceryStoreManager.NhaCungCap.Instance.BringToFront();
             }
             else
+            {
                 GroceryStoreManager.NhaCungCap.Instance.BringToFront();
+                GroceryStoreManager.NhaCungCap.Instance.LoadData();
+
+            }
         }
 
         private void TileBanHang_Click(object sender, EventArgs e)
@@ -84,7 +88,9 @@ namespace GroceryStoreManager
                 GroceryStoreManager.GiaoDich.Instance.BringToFront();
             }
             else
+            {
                 GroceryStoreManager.GiaoDich.Instance.BringToFront();
+            }
         }
 
         private void TileNhapHang_Click(object sender, EventArgs e)
@@ -96,7 +102,11 @@ namespace GroceryStoreManager
                 GroceryStoreManager.QLPhieuNhap.Instance.BringToFront();
             }
             else
+            {
                 GroceryStoreManager.QLPhieuNhap.Instance.BringToFront();
+                GroceryStoreManager.QLPhieuNhap.Instance.LoadData();
+            }
+                
         }
 
         private void TileQLHang_Click(object sender, EventArgs e)
@@ -108,7 +118,11 @@ namespace GroceryStoreManager
                 GroceryStoreManager.QLHang.Instance.BringToFront();
             }
             else
+            {
                 GroceryStoreManager.QLHang.Instance.BringToFront();
+                GroceryStoreManager.QLHang.Instance.LayDanhSachMatHang();
+            }
+               
         }
 
         private void TileQLHoaDon_Click(object sender, EventArgs e)
@@ -120,7 +134,10 @@ namespace GroceryStoreManager
                 GroceryStoreManager.QLHoaDon.Instance.BringToFront();
             }
             else
+            {
                 GroceryStoreManager.QLHoaDon.Instance.BringToFront();
+                GroceryStoreManager.QLHoaDon.Instance.LoadData();
+            }
         }
     }
 }

@@ -30,8 +30,7 @@ namespace GroceryStoreManager
             InitializeComponent();
             session = new DatabaseContext();
         }
-
-        private void QLHoaDon_Load(object sender, EventArgs e)
+        public void LoadData()
         {
             try
             {
@@ -42,6 +41,10 @@ namespace GroceryStoreManager
             {
                 MessageBox.Show("Hệ thống đang được nâng cấp!!!");
             }
+        }
+        private void QLHoaDon_Load(object sender, EventArgs e)
+        {
+            LoadData();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
