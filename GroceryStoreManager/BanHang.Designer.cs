@@ -244,6 +244,7 @@
             this.txtKhachThanhToan.UseStyleColors = true;
             this.txtKhachThanhToan.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtKhachThanhToan.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtKhachThanhToan.TextChanged += new System.EventHandler(this.txtKhachThanhToan_TextChanged);
             this.txtKhachThanhToan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKhachThanhToan_KeyPress);
             // 
             // metroPanel2
@@ -416,6 +417,7 @@
             this.btnThanhToan.UseCustomForeColor = true;
             this.btnThanhToan.UseSelectable = true;
             this.btnThanhToan.UseStyleColors = true;
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
             // GridBanHang1
             // 

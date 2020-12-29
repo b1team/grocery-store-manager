@@ -18,8 +18,6 @@ namespace GroceryStoreManager
         private NguoiDung thuNgan;
         private Quyen quyen;
         private List<Model.ChiTietHoaDon> SelectedItems = new List<Model.ChiTietHoaDon>();
-        private List<Model.ChiTietHoaDon> Items = new List<Model.ChiTietHoaDon>();
-
 
         internal NguoiDung ThuNgan { get => thuNgan; set => thuNgan = value; }
         internal Quyen Quyen { get => quyen; set => quyen = value; }
@@ -32,23 +30,23 @@ namespace GroceryStoreManager
 
         public void HoaDon()
         {
-            
             int total = GridBanHang1.Rows.Cast<DataGridViewRow>()
-                .Sum(t => Convert.ToInt32(t.Cells[4].Value));
-            int TongTienHang =total;
-            int KhachCanTra = (int)(TongTienHang);
+                 .Sum(t => Convert.ToInt32(t.Cells[4].Value));
+            int TongTienHang = total;
 
-            int KhachThanhToan = Convert.ToInt32(txtKhachThanhToan.Text.Trim());
-            int TienThuaTraKhach = KhachThanhToan - KhachCanTra;
+            int KhachThanhToan = 0;
+            txtKhachThanhToan.Text = KhachThanhToan.ToString();
 
+            btnThanhToan.Enabled = TongTienHang > 0;
             lbTongTienHang.Text = TongTienHang.ToString();
-            lbKhachCanTra.Text = KhachCanTra.ToString();
-            lbTienThuaTraKhach.Text = TienThuaTraKhach.ToString();
 
+            int KhachCanTra = TongTienHang > 0 ? TongTienHang : 0;
+            lbKhachCanTra.Text = KhachCanTra.ToString();
         }
 
         private void BanHang_Load(object sender, EventArgs e)
         {
+            HoaDon();
             lbNhanVienThuNgan.Text = thuNgan.TenNguoiDung;
         }
 
@@ -67,7 +65,7 @@ namespace GroceryStoreManager
 
 
         private void handle_cellclicks(object sender, DataGridViewCellEventArgs e)
-        { 
+        {
             DataGridViewRow row = GridBanHang2.Rows[e.RowIndex];
             int mahang = Convert.ToInt32(row.Cells[0].Value);
             string tenhang = Convert.ToString(row.Cells[1].Value);
@@ -77,7 +75,7 @@ namespace GroceryStoreManager
 
             int rows = GridBanHang1.Rows.Count;
             var existed = false;
-            for(int i=0; i<rows; i++)
+            for (int i = 0; i < rows; i++)
             {
                 DataGridViewRow row1 = GridBanHang1.Rows[i];
                 if (Convert.ToInt32(row1.Cells[0].Value) == item.MaHang)
@@ -91,7 +89,7 @@ namespace GroceryStoreManager
             if (!existed)
             {
                 SelectedItems.Add(item);
-                
+
             }
 
             GridBanHang1.DataSource = new List<Model.ChiTietHoaDon>();
@@ -116,18 +114,90 @@ namespace GroceryStoreManager
                 row1.Cells[4].Value = Model.ChiTietHoaDon.ThanhToan((int)row1.Cells[3].Value, (int)row1.Cells[2].Value);
                 break;
             }
-            int total = GridBanHang1.Rows.Cast<DataGridViewRow>()
-                 .Sum(t => Convert.ToInt32(t.Cells[4].Value));
-            int TongTienHang = total;
-            lbTongTienHang.Text = TongTienHang.ToString();
+            HoaDon();
         }
 
         private void GridBanHang1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            int total = GridBanHang1.Rows.Cast<DataGridViewRow>()
-                .Sum(t => Convert.ToInt32(t.Cells[4].Value));
-            int TongTienHang = total;
-            lbTongTienHang.Text = TongTienHang.ToString();
+            HoaDon();
+        }
+
+        private void txtKhachThanhToan_TextChanged(object sender, EventArgs e)
+
+        {
+            try
+            {
+                lbTienThuaTraKhach.Text = "";
+                int KhachCanTra = Convert.ToInt32(lbKhachCanTra.Text);
+                int KhachThanhToan = Convert.ToInt32(txtKhachThanhToan.Text.Trim());
+                int TienThuaTraKhach = KhachThanhToan - KhachCanTra;
+                lbTienThuaTraKhach.Text = TienThuaTraKhach.ToString();
+            }
+            catch (Exception)
+            {
+                //
+            }
+        }
+
+        private void ThanhToan()
+        {
+            DateTime NgayTao = DateTime.Parse(datetime.Value.Date.ToString());
+            DateTime HanThanhToan = NgayTao;
+            DateTime ThoiGianThanhToan = DateTime.Parse(datetime.Value.TimeOfDay.ToString());
+            bool DaThanhToan = true;
+            int TongTienHang = Convert.ToInt32(lbTongTienHang.Text.Trim());
+            HoaDon hd = new HoaDon()
+            {
+                NgayTao = NgayTao,
+                HanThanhToan = HanThanhToan,
+                ThoiGianThanhToan = ThoiGianThanhToan,
+                DaThanhToan = DaThanhToan,
+                ThanhTien = TongTienHang
+
+            };
+            session.DsHoaDon.Add(hd);
+            session.SaveChanges();
+
+            var maHD = hd.MaHD;
+            foreach (var item in SelectedItems)
+            {
+                ChiTietHD chitiethd = new ChiTietHD()
+                {
+                    MaHD = maHD,
+                    MaHang = item.MaHang,
+                    SoLuong = item.SoLuong,
+                    DonGia = item.GiaBan,
+                    ThanhTien = item.ThanhTien
+                };
+                session.DsChiTietHD.Add(chitiethd);
+            }
+            session.SaveChanges();
+        }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Convert.ToInt32(lbTienThuaTraKhach.Text) >= 0)
+                {
+                    try
+                    {
+                        ThanhToan();
+                        MessageBox.Show("Thanh Toán Thành Công!");
+                        GridBanHang1.DataSource = null;
+                        GridBanHang1.Refresh();
+                        HoaDon();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Xảy ra lỗi trong quá trình thanh toán!!!");
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                //
+            }
         }
     }
 }
