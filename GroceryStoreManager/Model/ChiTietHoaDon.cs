@@ -18,22 +18,22 @@ namespace GroceryStoreManager.Model
         }
 
 
-        public ChiTietHoaDon( int MaHang, string TenHang, int SoLuong, int GiaBan)
+        public ChiTietHoaDon( int MaHang, string TenHang, int SoLuong, float GiaBan)
         {
             this.MaHang = MaHang;
             this.TenHang = TenHang;
             this.GiaBan = GiaBan;
             this.SoLuong = SoLuong;
-            this.ThanhTien = GiaBan * SoLuong;
+            this.ThanhTien = (GiaBan * SoLuong);
         }
 
         public int MaHang { get; set; }
         public string TenHang { get; }
-        public int GiaBan { get; set; }
+        public float GiaBan { get; set; }
         public int SoLuong { get;  set; }
-        public int ThanhTien { get; set; }
+        public float ThanhTien { get; set; }
 
-        public static int ThanhToan(int GiaBan, int SoLuong)
+        public static float ThanhToan(float GiaBan, int SoLuong)
         {
             return GiaBan * SoLuong;
         }
