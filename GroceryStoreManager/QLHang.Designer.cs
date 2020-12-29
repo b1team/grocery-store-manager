@@ -39,6 +39,7 @@
             this.tenHangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dangKinhDoanhDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.soLuongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.giaBanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.GridQLHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.matHangBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -64,7 +65,8 @@
             this.maHangDataGridViewTextBoxColumn,
             this.tenHangDataGridViewTextBoxColumn,
             this.dangKinhDoanhDataGridViewCheckBoxColumn,
-            this.soLuongDataGridViewTextBoxColumn});
+            this.soLuongDataGridViewTextBoxColumn,
+            this.giaBanDataGridViewTextBoxColumn});
             this.GridQLHang.DataSource = this.matHangBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -118,7 +120,6 @@
             this.maHangDataGridViewTextBoxColumn.DataPropertyName = "MaHang";
             this.maHangDataGridViewTextBoxColumn.HeaderText = "Mã Hàng";
             this.maHangDataGridViewTextBoxColumn.Name = "maHangDataGridViewTextBoxColumn";
-            this.maHangDataGridViewTextBoxColumn.ReadOnly = true;
             this.maHangDataGridViewTextBoxColumn.Width = 200;
             // 
             // tenHangDataGridViewTextBoxColumn
@@ -133,15 +134,21 @@
             this.dangKinhDoanhDataGridViewCheckBoxColumn.DataPropertyName = "DangKinhDoanh";
             this.dangKinhDoanhDataGridViewCheckBoxColumn.HeaderText = "Đang Kinh Doanh";
             this.dangKinhDoanhDataGridViewCheckBoxColumn.Name = "dangKinhDoanhDataGridViewCheckBoxColumn";
-            this.dangKinhDoanhDataGridViewCheckBoxColumn.Width = 150;
+            this.dangKinhDoanhDataGridViewCheckBoxColumn.Width = 200;
             // 
             // soLuongDataGridViewTextBoxColumn
             // 
-            this.soLuongDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.soLuongDataGridViewTextBoxColumn.DataPropertyName = "SoLuong";
             this.soLuongDataGridViewTextBoxColumn.HeaderText = "Số Lượng";
             this.soLuongDataGridViewTextBoxColumn.Name = "soLuongDataGridViewTextBoxColumn";
-            this.soLuongDataGridViewTextBoxColumn.ReadOnly = true;
+            this.soLuongDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // giaBanDataGridViewTextBoxColumn
+            // 
+            this.giaBanDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.giaBanDataGridViewTextBoxColumn.DataPropertyName = "GiaBan";
+            this.giaBanDataGridViewTextBoxColumn.HeaderText = "Giá Bán";
+            this.giaBanDataGridViewTextBoxColumn.Name = "giaBanDataGridViewTextBoxColumn";
             // 
             // QLHang
             // 
@@ -161,11 +168,12 @@
         #endregion
 
         private MetroFramework.Controls.MetroGrid GridQLHang;
-        private System.Windows.Forms.BindingSource matHangBindingSource;
         private MetroFramework.Controls.MetroButton btnSave;
         private System.Windows.Forms.DataGridViewTextBoxColumn maHangDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenHangDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dangKinhDoanhDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn soLuongDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn giaBanDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource matHangBindingSource;
     }
 }
