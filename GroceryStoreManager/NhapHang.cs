@@ -114,8 +114,22 @@ namespace GroceryStoreManager
                 return;
             }
             DataGridViewRow row = gridChiTietPN.Rows[e.RowIndex];
+            var soLuong = Convert.ToInt32(row.Cells["SoLuong"].Value);
+            var giaNhap = Convert.ToDouble(row.Cells["GiaNhap"].Value);
+            if (soLuong <= 0)
+            {
+                MessageBox.Show("Số lượng phải >0");
+                row.Cells["SoLuong"].Value = 1;
+                return;
+            }
+            if (giaNhap < 0)
+            {
+                MessageBox.Show("Giá nhập không được < 0");
+                row.Cells["GiaNhap"].Value = 0;
+                return;
+            }
             var thanh_tien_cu = Convert.ToDouble(row.Cells["ThanhTien"].Value);
-            var thanh_tien_moi = Convert.ToDouble(row.Cells["GiaNhap"].Value) * Convert.ToInt32(row.Cells["SoLuong"].Value);
+            var thanh_tien_moi = giaNhap * soLuong;
             row.Cells["ThanhTien"].Value = thanh_tien_moi;
             txtThanhTien.Text = (Convert.ToDouble(txtThanhTien.Text) + (thanh_tien_moi - thanh_tien_cu)).ToString();
         }
