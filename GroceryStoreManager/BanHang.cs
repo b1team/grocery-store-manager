@@ -30,17 +30,17 @@ namespace GroceryStoreManager
 
         public void HoaDon()
         {
-            int total = GridBanHang1.Rows.Cast<DataGridViewRow>()
-                 .Sum(t => Convert.ToInt32(t.Cells[4].Value));
-            int TongTienHang = total;
+            float total = GridBanHang1.Rows.Cast<DataGridViewRow>()
+                 .Sum(t => (float)(t.Cells[4].Value));
+            float TongTienHang = total;
 
-            int KhachThanhToan = 0;
+            float KhachThanhToan = 0;
             txtKhachThanhToan.Text = KhachThanhToan.ToString();
 
             btnThanhToan.Enabled = TongTienHang > 0;
             lbTongTienHang.Text = TongTienHang.ToString();
 
-            int KhachCanTra = TongTienHang > 0 ? TongTienHang : 0;
+            float KhachCanTra = TongTienHang > 0 ? TongTienHang : 0;
             lbKhachCanTra.Text = KhachCanTra.ToString();
         }
 
@@ -70,7 +70,7 @@ namespace GroceryStoreManager
             int mahang = Convert.ToInt32(row.Cells[0].Value);
             string tenhang = Convert.ToString(row.Cells[1].Value);
             int soluong = Convert.ToInt32(row.Cells[2].Value);
-            int giaban = Convert.ToInt32(row.Cells[3].Value);
+            float giaban = (float)Convert.ToDouble(row.Cells[3].Value);
             var item = new Model.ChiTietHoaDon(mahang, tenhang, 1, giaban);
 
             int rows = GridBanHang1.Rows.Count;
@@ -81,7 +81,7 @@ namespace GroceryStoreManager
                 if (Convert.ToInt32(row1.Cells[0].Value) == item.MaHang)
                 {
                     row1.Cells[2].Value = (int)row1.Cells[2].Value + 1;
-                    row1.Cells[4].Value = Model.ChiTietHoaDon.ThanhToan((int)row1.Cells[3].Value, (int)row1.Cells[2].Value);
+                    row1.Cells[4].Value = Model.ChiTietHoaDon.ThanhToan((float)row1.Cells[3].Value, (int)row1.Cells[2].Value);
                     existed = true;
                     break;
                 }
@@ -111,7 +111,7 @@ namespace GroceryStoreManager
             for (int i = 0; i < rows; i++)
             {
                 DataGridViewRow row1 = GridBanHang1.Rows[i];
-                row1.Cells[4].Value = Model.ChiTietHoaDon.ThanhToan((int)row1.Cells[3].Value, (int)row1.Cells[2].Value);
+                row1.Cells[4].Value = Model.ChiTietHoaDon.ThanhToan((float)row1.Cells[3].Value, (int)row1.Cells[2].Value);
                 break;
             }
             HoaDon();
@@ -128,9 +128,9 @@ namespace GroceryStoreManager
             try
             {
                 lbTienThuaTraKhach.Text = "";
-                int KhachCanTra = Convert.ToInt32(lbKhachCanTra.Text);
-                int KhachThanhToan = Convert.ToInt32(txtKhachThanhToan.Text.Trim());
-                int TienThuaTraKhach = KhachThanhToan - KhachCanTra;
+                float KhachCanTra = (float)Convert.ToDouble(lbKhachCanTra.Text.Trim());
+                float KhachThanhToan = (float)Convert.ToDouble(txtKhachThanhToan.Text.Trim());
+                float TienThuaTraKhach = KhachThanhToan - KhachCanTra;
                 lbTienThuaTraKhach.Text = TienThuaTraKhach.ToString();
             }
             catch (Exception)
@@ -141,37 +141,52 @@ namespace GroceryStoreManager
 
         private void ThanhToan()
         {
-            DateTime NgayTao = DateTime.Parse(datetime.Value.Date.ToString());
+            DateTime NgayTao = DateTime.Parse(datetime.Value.Date.ToString().Trim());
             DateTime HanThanhToan = NgayTao;
             DateTime ThoiGianThanhToan = DateTime.Parse(datetime.Value.TimeOfDay.ToString());
             bool DaThanhToan = true;
-            int TongTienHang = Convert.ToInt32(lbTongTienHang.Text.Trim());
-            HoaDon hd = new HoaDon()
+            float TongTienHang = (float)Convert.ToDouble(lbTongTienHang.Text.Trim());
+            HoaDon hd = new HoaDon();
+            try
             {
-                NgayTao = NgayTao,
-                HanThanhToan = HanThanhToan,
-                ThoiGianThanhToan = ThoiGianThanhToan,
-                DaThanhToan = DaThanhToan,
-                ThanhTien = TongTienHang
+                hd.NgayTao = NgayTao;
+                hd.HanThanhToan = HanThanhToan;
+                hd.ThoiGianThanhToan = ThoiGianThanhToan;
+                hd.DaThanhToan = DaThanhToan;
+                hd.ThanhTien = TongTienHang;
 
-            };
-            session.DsHoaDon.Add(hd);
-            session.SaveChanges();
-
-            var maHD = hd.MaHD;
-            foreach (var item in SelectedItems)
-            {
-                ChiTietHD chitiethd = new ChiTietHD()
-                {
-                    MaHD = maHD,
-                    MaHang = item.MaHang,
-                    SoLuong = item.SoLuong,
-                    DonGia = item.GiaBan,
-                    ThanhTien = item.ThanhTien
-                };
-                session.DsChiTietHD.Add(chitiethd);
+                session.DsHoaDon.Add(hd);
+                session.SaveChanges();
             }
-            session.SaveChanges();
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi tạo hóa đơn!!!");
+                return;
+            }
+
+            try
+            {
+                var maHD = hd.MaHD;
+                foreach (var item in SelectedItems)
+                {
+                    ChiTietHD chitiethd = new ChiTietHD()
+                    {
+                        MaHD = maHD,
+                        MaHang = item.MaHang,
+                        SoLuong = item.SoLuong,
+                        DonGia = item.GiaBan,
+                        ThanhTien = item.ThanhTien
+                    };
+                    session.DsChiTietHD.Add(chitiethd);
+                }
+                session.SaveChanges();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi tạo chi tiết hóa đơn!!!");
+                return;
+            }
+            
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
