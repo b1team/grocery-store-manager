@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.NhapHang = new MetroFramework.Controls.MetroTile();
             this.panel = new MetroFramework.Controls.MetroPanel();
             this.TileNhaCungCap = new MetroFramework.Controls.MetroTile();
-            this.TileBanHang = new MetroFramework.Controls.MetroTile();
             this.TileGiaoDich = new MetroFramework.Controls.MetroTile();
             this.TileQLPhieuNhap = new MetroFramework.Controls.MetroTile();
             this.TileQLHang = new MetroFramework.Controls.MetroTile();
@@ -73,41 +71,25 @@
             // TileNhaCungCap
             // 
             this.TileNhaCungCap.ActiveControl = null;
-            this.TileNhaCungCap.Location = new System.Drawing.Point(217, 63);
+            this.TileNhaCungCap.Location = new System.Drawing.Point(412, 63);
             this.TileNhaCungCap.Name = "TileNhaCungCap";
             this.TileNhaCungCap.Size = new System.Drawing.Size(176, 90);
             this.TileNhaCungCap.Style = MetroFramework.MetroColorStyle.Green;
             this.TileNhaCungCap.TabIndex = 4;
-            this.TileNhaCungCap.Text = "Nhà cung cấp";
+            this.TileNhaCungCap.Text = "Quản lý nhà cung cấp";
             this.TileNhaCungCap.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.TileNhaCungCap.UseSelectable = true;
             this.TileNhaCungCap.Click += new System.EventHandler(this.TileNhaCungCap_Click);
             // 
-            // TileBanHang
-            // 
-            this.TileBanHang.ActiveControl = null;
-            this.TileBanHang.Location = new System.Drawing.Point(412, 63);
-            this.TileBanHang.Name = "TileBanHang";
-            this.TileBanHang.Size = new System.Drawing.Size(176, 90);
-            this.TileBanHang.Style = MetroFramework.MetroColorStyle.Blue;
-            this.TileBanHang.TabIndex = 5;
-            this.TileBanHang.Text = "Bán Hàng";
-            this.TileBanHang.TileImage = ((System.Drawing.Image)(resources.GetObject("TileBanHang.TileImage")));
-            this.TileBanHang.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.TileBanHang.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
-            this.TileBanHang.UseSelectable = true;
-            this.TileBanHang.UseTileImage = true;
-            this.TileBanHang.Click += new System.EventHandler(this.TileBanHang_Click);
-            // 
             // TileGiaoDich
             // 
             this.TileGiaoDich.ActiveControl = null;
-            this.TileGiaoDich.Location = new System.Drawing.Point(607, 63);
+            this.TileGiaoDich.Location = new System.Drawing.Point(214, 63);
             this.TileGiaoDich.Name = "TileGiaoDich";
             this.TileGiaoDich.Size = new System.Drawing.Size(176, 90);
             this.TileGiaoDich.Style = MetroFramework.MetroColorStyle.Black;
             this.TileGiaoDich.TabIndex = 6;
-            this.TileGiaoDich.Text = "Giao dịch";
+            this.TileGiaoDich.Text = "Báo cáo";
             this.TileGiaoDich.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.TileGiaoDich.UseSelectable = true;
             this.TileGiaoDich.Click += new System.EventHandler(this.TileGiaoDich_Click);
@@ -115,7 +97,7 @@
             // TileQLPhieuNhap
             // 
             this.TileQLPhieuNhap.ActiveControl = null;
-            this.TileQLPhieuNhap.Location = new System.Drawing.Point(802, 63);
+            this.TileQLPhieuNhap.Location = new System.Drawing.Point(614, 63);
             this.TileQLPhieuNhap.Name = "TileQLPhieuNhap";
             this.TileQLPhieuNhap.Size = new System.Drawing.Size(176, 90);
             this.TileQLPhieuNhap.TabIndex = 7;
@@ -127,7 +109,7 @@
             // TileQLHang
             // 
             this.TileQLHang.ActiveControl = null;
-            this.TileQLHang.Location = new System.Drawing.Point(998, 63);
+            this.TileQLHang.Location = new System.Drawing.Point(810, 63);
             this.TileQLHang.Name = "TileQLHang";
             this.TileQLHang.Size = new System.Drawing.Size(176, 90);
             this.TileQLHang.Style = MetroFramework.MetroColorStyle.Orange;
@@ -141,7 +123,7 @@
             // 
             this.TileQLHoaDon.ActiveControl = null;
             this.TileQLHoaDon.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.TileQLHoaDon.Location = new System.Drawing.Point(1191, 63);
+            this.TileQLHoaDon.Location = new System.Drawing.Point(1003, 63);
             this.TileQLHoaDon.Name = "TileQLHoaDon";
             this.TileQLHoaDon.Size = new System.Drawing.Size(176, 90);
             this.TileQLHoaDon.Style = MetroFramework.MetroColorStyle.Green;
@@ -162,7 +144,6 @@
             this.Controls.Add(this.TileQLHang);
             this.Controls.Add(this.TileQLPhieuNhap);
             this.Controls.Add(this.TileGiaoDich);
-            this.Controls.Add(this.TileBanHang);
             this.Controls.Add(this.TileNhaCungCap);
             this.Controls.Add(this.panel);
             this.Controls.Add(this.NhapHang);
@@ -179,7 +160,6 @@
         private MetroFramework.Controls.MetroTile NhapHang;
         private MetroFramework.Controls.MetroPanel panel;
         private MetroFramework.Controls.MetroTile TileNhaCungCap;
-        private MetroFramework.Controls.MetroTile TileBanHang;
         private MetroFramework.Controls.MetroTile TileGiaoDich;
         private MetroFramework.Controls.MetroTile TileQLPhieuNhap;
         private MetroFramework.Controls.MetroTile TileQLHang;

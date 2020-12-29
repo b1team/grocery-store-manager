@@ -19,8 +19,6 @@ namespace GroceryStoreManager
         private Quyen quyen;
         private List<Model.ChiTietHoaDon> SelectedItems = new List<Model.ChiTietHoaDon>();
         private List<Model.ChiTietHoaDon> Items = new List<Model.ChiTietHoaDon>();
-        private List<Model.ChiTietPhieuNhap> SelectedItems = new List<Model.ChiTietPhieuNhap>();
-        private List<Model.ChiTietPhieuNhap> Items = new List<Model.ChiTietPhieuNhap>();
 
 
         internal NguoiDung ThuNgan { get => thuNgan; set => thuNgan = value; }
