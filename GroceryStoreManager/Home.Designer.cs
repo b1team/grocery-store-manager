@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
-            this.DonHang = new MetroFramework.Controls.MetroTile();
+            this.NhapHang = new MetroFramework.Controls.MetroTile();
             this.panel = new MetroFramework.Controls.MetroPanel();
             this.TileNhaCungCap = new MetroFramework.Controls.MetroTile();
             this.TileBanHang = new MetroFramework.Controls.MetroTile();
@@ -39,23 +39,23 @@
             this.TileQLHoaDon = new MetroFramework.Controls.MetroTile();
             this.SuspendLayout();
             // 
-            // DonHang
+            // NhapHang
             // 
-            this.DonHang.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.DonHang.ActiveControl = null;
-            this.DonHang.ForeColor = System.Drawing.Color.White;
-            this.DonHang.Location = new System.Drawing.Point(23, 63);
-            this.DonHang.Name = "DonHang";
-            this.DonHang.Size = new System.Drawing.Size(176, 90);
-            this.DonHang.Style = MetroFramework.MetroColorStyle.Silver;
-            this.DonHang.TabIndex = 2;
-            this.DonHang.Text = "Đơn Hàng";
-            this.DonHang.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
-            this.DonHang.UseCustomForeColor = true;
-            this.DonHang.UseSelectable = true;
-            this.DonHang.UseStyleColors = true;
-            this.DonHang.UseTileImage = true;
-            this.DonHang.Click += new System.EventHandler(this.DonHang_Click);
+            this.NhapHang.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.NhapHang.ActiveControl = null;
+            this.NhapHang.ForeColor = System.Drawing.Color.White;
+            this.NhapHang.Location = new System.Drawing.Point(23, 63);
+            this.NhapHang.Name = "NhapHang";
+            this.NhapHang.Size = new System.Drawing.Size(176, 90);
+            this.NhapHang.Style = MetroFramework.MetroColorStyle.Silver;
+            this.NhapHang.TabIndex = 2;
+            this.NhapHang.Text = "Nhập hàng";
+            this.NhapHang.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.NhapHang.UseCustomForeColor = true;
+            this.NhapHang.UseSelectable = true;
+            this.NhapHang.UseStyleColors = true;
+            this.NhapHang.UseTileImage = true;
+            this.NhapHang.Click += new System.EventHandler(this.DonHang_Click);
             // 
             // panel
             // 
@@ -165,7 +165,7 @@
             this.Controls.Add(this.TileBanHang);
             this.Controls.Add(this.TileNhaCungCap);
             this.Controls.Add(this.panel);
-            this.Controls.Add(this.DonHang);
+            this.Controls.Add(this.NhapHang);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1600, 900);
             this.MinimumSize = new System.Drawing.Size(1600, 900);
@@ -176,7 +176,7 @@
         }
 
         #endregion
-        private MetroFramework.Controls.MetroTile DonHang;
+        private MetroFramework.Controls.MetroTile NhapHang;
         private MetroFramework.Controls.MetroPanel panel;
         private MetroFramework.Controls.MetroTile TileNhaCungCap;
         private MetroFramework.Controls.MetroTile TileBanHang;

@@ -15,8 +15,8 @@ namespace GroceryStoreManager
     {
         private NguoiDung thuNgan;
         private Quyen quyen;
-        private List<Model.BanHang> SelectedItems = new List<Model.BanHang>();
-        private List<Model.BanHang> Items = new List<Model.BanHang>();
+        private List<Model.ChiTietPhieuNhap> SelectedItems = new List<Model.ChiTietPhieuNhap>();
+        private List<Model.ChiTietPhieuNhap> Items = new List<Model.ChiTietPhieuNhap>();
 
         internal NguoiDung ThuNgan { get => thuNgan; set => thuNgan = value; }
         internal Quyen Quyen { get => quyen; set => quyen = value; }
@@ -52,7 +52,7 @@ namespace GroceryStoreManager
             data.Add(new Model.Hang("2", "hang 2", 3, "nha cung cap 2", 1300));
             data.Add(new Model.Hang("3", "hang 3", 4, "nha cung cap 3", 1400));
             data.Add(new Model.Hang("4", "hang 4", 5, "nha cung cap 4", 1500));
-            GridBanHang2.DataSource = new List<Model.BanHang>();
+            GridBanHang2.DataSource = new List<Model.ChiTietPhieuNhap>();
             GridBanHang2.DataSource = data;
             HoaDon();
         }
@@ -74,7 +74,7 @@ namespace GroceryStoreManager
         private void GridBanHang2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         { 
             DataGridViewRow row = GridBanHang2.Rows[e.RowIndex];
-            var item = new Model.BanHang(Convert.ToString(row.Cells[0].Value), Convert.ToString(row.Cells[1].Value), Convert.ToInt32(row.Cells[2].Value), 1);
+            var item = new Model.ChiTietPhieuNhap(Convert.ToString(row.Cells[0].Value), Convert.ToString(row.Cells[1].Value), Convert.ToInt32(row.Cells[2].Value), 1);
             
             int rows = GridBanHang1.Rows.Count;
             var existed = false;
@@ -84,7 +84,7 @@ namespace GroceryStoreManager
                 if (row1.Cells["MaHang"].Value.ToString() == item.MaHang)
                 {
                     row1.Cells["SoLuong"].Value = (int)row1.Cells["SoLuong"].Value + 1;
-                    row1.Cells["ThanhTien"].Value = Model.BanHang.ThanhToan((int)row1.Cells["DonGia"].Value, (int)row1.Cells["SoLuong"].Value);
+                    row1.Cells["ThanhTien"].Value = Model.ChiTietPhieuNhap.ThanhToan((int)row1.Cells["DonGia"].Value, (int)row1.Cells["SoLuong"].Value);
                     existed = true;
                     break;
                 }
@@ -94,7 +94,7 @@ namespace GroceryStoreManager
                 SelectedItems.Add(item);
                 
             }
-            GridBanHang1.DataSource = new List<Model.BanHang>();
+            GridBanHang1.DataSource = new List<Model.ChiTietPhieuNhap>();
             GridBanHang1.DataSource = SelectedItems;
         }
 
