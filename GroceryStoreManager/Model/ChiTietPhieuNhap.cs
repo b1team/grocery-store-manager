@@ -10,7 +10,7 @@ namespace GroceryStoreManager.Model
     {
         public ChiTietPhieuNhap()
         {
-            MaHang = "";
+            MaHang = 0;
             TenHang = "";
             GiaNhap = 0;
             SoLuong = 0;
@@ -18,7 +18,7 @@ namespace GroceryStoreManager.Model
         }
 
 
-        public ChiTietPhieuNhap( string MaHang, string TenHang, int DonGia, int SoLuong)
+        public ChiTietPhieuNhap( int MaHang, string TenHang, float DonGia, int SoLuong)
         {
             this.MaHang = MaHang;
             this.TenHang = TenHang;
@@ -27,13 +27,13 @@ namespace GroceryStoreManager.Model
             this.ThanhTien = DonGia * SoLuong;
         }
 
-        public string MaHang { get; set; }
+        public int MaHang { get; set; }
         public string TenHang { get; set; }
-        public int GiaNhap { get; set; }
+        public float GiaNhap { get; set; }
         public int SoLuong { get;  set; }
-        public int ThanhTien { get; set; }
+        public float ThanhTien { get; set; }
 
-        public static int ThanhToan(int DonGia, int SoLuong)
+        public static float ThanhToan(int DonGia, int SoLuong)
         {
             return DonGia * SoLuong;
         }
