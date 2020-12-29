@@ -113,6 +113,10 @@
     <Compile Include="Migrations\202012281213162_Added giaban to MaHang.designer.cs">
       <DependentUpon>202012281213162_Added giaban to MaHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012291137161_add NCC to phieunhap.cs" />
+    <Compile Include="Migrations\202012291137161_add NCC to phieunhap.designer.cs">
+      <DependentUpon>202012291137161_add NCC to phieunhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\ChiTietHoaDon.cs" />
     <Compile Include="Model\ChiTietPhieuNhap.cs" />
     <Compile Include="Model\DonHang.cs" />
@@ -200,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012281213162_Added giaban to MaHang.resx">
       <DependentUpon>202012281213162_Added giaban to MaHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012291137161_add NCC to phieunhap.resx">
+      <DependentUpon>202012291137161_add NCC to phieunhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhaCungCap.resx">
       <DependentUpon>NhaCungCap.cs</DependentUpon>
