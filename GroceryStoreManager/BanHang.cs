@@ -99,13 +99,6 @@ namespace GroceryStoreManager
         }
 
 
-
-        private void GridBanHang1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewRow row = GridBanHang1.Rows[e.RowIndex];
-            
-        }
-
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
             session.DsMatHang.Load();
@@ -116,6 +109,13 @@ namespace GroceryStoreManager
 
         private void TinhLaiTongTien(object sender, DataGridViewCellEventArgs e)
         {
+            int rows = GridBanHang1.Rows.Count;
+            for (int i = 0; i < rows; i++)
+            {
+                DataGridViewRow row1 = GridBanHang1.Rows[i];
+                row1.Cells[4].Value = Model.ChiTietHoaDon.ThanhToan((int)row1.Cells[3].Value, (int)row1.Cells[2].Value);
+                break;
+            }
             int total = GridBanHang1.Rows.Cast<DataGridViewRow>()
                  .Sum(t => Convert.ToInt32(t.Cells[4].Value));
             int TongTienHang = total;
