@@ -34,8 +34,9 @@ namespace GroceryStoreManager
         {
             try
             {
-                session.DsHoaDon.Load();
-                GridHoaDon.DataSource = session.DsHoaDon.Local.ToBindingList();
+                BindingSource data = new BindingSource();
+                data.DataSource = session.DsHoaDon.OrderByDescending(hoadon => hoadon.ThoiGianThanhToan).ToList();
+                GridHoaDon.DataSource = data;
             }
             catch (Exception)
             {
