@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangKy));
             this.btnRegister = new MetroFramework.Controls.MetroButton();
             this.txtTenNguoiDung = new MetroFramework.Controls.MetroTextBox();
             this.txtMatKhau = new MetroFramework.Controls.MetroTextBox();
@@ -201,6 +202,9 @@
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.txtTenNguoiDung);
             this.Controls.Add(this.txtMatKhau);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(580, 606);
+            this.MinimumSize = new System.Drawing.Size(580, 606);
             this.Name = "DangKy";
             this.Text = "Đăng Ký";
             this.Load += new System.EventHandler(this.DangKy_Load);

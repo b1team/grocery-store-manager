@@ -28,6 +28,7 @@ namespace GroceryStoreManager
         private void DangNhap_Load(object sender, EventArgs e)
         {
             db = new DatabaseContext();
+            this.ActiveControl = txtTenDangNhap;
         }
 
         private void lbDangKy_Click(object sender, EventArgs e)
@@ -39,11 +40,11 @@ namespace GroceryStoreManager
             this.Show();
         }
 
-        private void btnDangNhap_Click(object sender, EventArgs e)
+        private void BatDauDangNhap()
         {
             var tenDangNhap = txtTenDangNhap.Text.Trim().ToLower();
             var matKhau = txtMatKhau.Text;
-            if(tenDangNhap == "" || matKhau == "")
+            if (tenDangNhap == "" || matKhau == "")
             {
                 MessageBox.Show("Tên người dùng hoặc mật khẩu không được để trống", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -71,13 +72,25 @@ namespace GroceryStoreManager
                 MessageBox.Show("Đang nâng cấp hệ thống", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            
-            
+
+        }
+
+        private void btnDangNhap_Click(object sender, EventArgs e)
+        {
+            BatDauDangNhap();
         }
 
         private void DangNhap_FormClosing(object sender, FormClosingEventArgs e)
         {
             db.Dispose();
+        }
+
+        private void pressEnterHandler(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                BatDauDangNhap();
+            }
         }
     }
 }
