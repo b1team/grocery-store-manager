@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangNhap));
             this.txtMatKhau = new MetroFramework.Controls.MetroTextBox();
             this.txtTenDangNhap = new MetroFramework.Controls.MetroTextBox();
             this.btnDangNhap = new MetroFramework.Controls.MetroButton();
@@ -65,6 +66,7 @@
             this.txtMatKhau.UseSelectable = true;
             this.txtMatKhau.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtMatKhau.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtMatKhau.KeyUp += new System.Windows.Forms.KeyEventHandler(this.pressEnterHandler);
             // 
             // txtTenDangNhap
             // 
@@ -92,10 +94,11 @@
             this.txtTenDangNhap.SelectionStart = 0;
             this.txtTenDangNhap.ShortcutsEnabled = true;
             this.txtTenDangNhap.Size = new System.Drawing.Size(266, 39);
-            this.txtTenDangNhap.TabIndex = 2;
+            this.txtTenDangNhap.TabIndex = 0;
             this.txtTenDangNhap.UseSelectable = true;
             this.txtTenDangNhap.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtTenDangNhap.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtTenDangNhap.KeyUp += new System.Windows.Forms.KeyEventHandler(this.pressEnterHandler);
             // 
             // btnDangNhap
             // 
@@ -104,13 +107,14 @@
             this.btnDangNhap.Location = new System.Drawing.Point(189, 317);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(166, 40);
-            this.btnDangNhap.TabIndex = 3;
+            this.btnDangNhap.TabIndex = 2;
             this.btnDangNhap.Text = "Đăng Nhập";
             this.btnDangNhap.UseCustomBackColor = true;
             this.btnDangNhap.UseCustomForeColor = true;
             this.btnDangNhap.UseSelectable = true;
             this.btnDangNhap.UseStyleColors = true;
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
+            this.btnDangNhap.KeyUp += new System.Windows.Forms.KeyEventHandler(this.pressEnterHandler);
             // 
             // metroLabel1
             // 
@@ -140,6 +144,9 @@
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.txtTenDangNhap);
             this.Controls.Add(this.txtMatKhau);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(590, 470);
+            this.MinimumSize = new System.Drawing.Size(590, 470);
             this.Name = "DangNhap";
             this.Text = "Đăng Nhập";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DangNhap_FormClosing);

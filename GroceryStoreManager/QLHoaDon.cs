@@ -76,5 +76,12 @@ namespace GroceryStoreManager
                 MessageBox.Show("Xảy ra lỗi!!!");
             }
         }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            session.DsHoaDon.Load();
+            var data = session.DsHoaDon.Local.ToBindingList().Where(hoadon => hoadon.MaHD.ToString().Contains(txtTimKiem.Text));
+            GridHoaDon.DataSource = data.ToList();
+        }
     }
 }
