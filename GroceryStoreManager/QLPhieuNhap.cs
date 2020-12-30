@@ -86,5 +86,12 @@ namespace GroceryStoreManager
                 MessageBox.Show("Xảy ra lỗi!!!");
             }
         }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            session.DsPhieuNhap.Load();
+            var data = session.DsPhieuNhap.Local.ToBindingList().Where(phieunhap => phieunhap.MaPhieuNhap.ToString().Contains(txtTimKiem.Text));
+            GridPhieuNhap.DataSource = data.ToList();
+        }
     }
 }
