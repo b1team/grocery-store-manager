@@ -41,6 +41,7 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.btnSave = new MetroFramework.Controls.MetroButton();
+            this.txtTimKiem = new MetroFramework.Controls.MetroTextBox();
             this.maPhieuNhapDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maHangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soLuongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,7 +54,6 @@
             this.ngayTaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phieuNhapBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.chiTietPNBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.txtTimKiem = new MetroFramework.Controls.MetroTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.GridPhieuNhap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridChiTietPhieuNhap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietPNBindingSource)).BeginInit();
@@ -210,6 +210,46 @@
             this.btnSave.UseStyleColors = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // txtTimKiem
+            // 
+            // 
+            // 
+            // 
+            this.txtTimKiem.CustomButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.txtTimKiem.CustomButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("resource.BackgroundImage")));
+            this.txtTimKiem.CustomButton.Image = null;
+            this.txtTimKiem.CustomButton.Location = new System.Drawing.Point(195, 1);
+            this.txtTimKiem.CustomButton.Name = "";
+            this.txtTimKiem.CustomButton.Size = new System.Drawing.Size(33, 33);
+            this.txtTimKiem.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtTimKiem.CustomButton.TabIndex = 1;
+            this.txtTimKiem.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtTimKiem.CustomButton.UseSelectable = true;
+            this.txtTimKiem.CustomButton.Visible = false;
+            this.txtTimKiem.DisplayIcon = true;
+            this.txtTimKiem.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.txtTimKiem.Icon = ((System.Drawing.Image)(resources.GetObject("txtTimKiem.Icon")));
+            this.txtTimKiem.IconRight = true;
+            this.txtTimKiem.Lines = new string[0];
+            this.txtTimKiem.Location = new System.Drawing.Point(467, 16);
+            this.txtTimKiem.MaxLength = 32767;
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.PasswordChar = '\0';
+            this.txtTimKiem.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtTimKiem.SelectedText = "";
+            this.txtTimKiem.SelectionLength = 0;
+            this.txtTimKiem.SelectionStart = 0;
+            this.txtTimKiem.ShortcutsEnabled = true;
+            this.txtTimKiem.Size = new System.Drawing.Size(229, 35);
+            this.txtTimKiem.TabIndex = 19;
+            this.txtTimKiem.UseCustomBackColor = true;
+            this.txtTimKiem.UseCustomForeColor = true;
+            this.txtTimKiem.UseSelectable = true;
+            this.txtTimKiem.UseStyleColors = true;
+            this.txtTimKiem.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtTimKiem.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
+            // 
             // maPhieuNhapDataGridViewTextBoxColumn1
             // 
             this.maPhieuNhapDataGridViewTextBoxColumn1.DataPropertyName = "MaPhieuNhap";
@@ -287,46 +327,6 @@
             // chiTietPNBindingSource1
             // 
             this.chiTietPNBindingSource1.DataSource = typeof(GroceryStoreManager.Domains.ChiTietPN);
-            // 
-            // txtTimKiem
-            // 
-            // 
-            // 
-            // 
-            this.txtTimKiem.CustomButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.txtTimKiem.CustomButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("resource.BackgroundImage")));
-            this.txtTimKiem.CustomButton.Image = null;
-            this.txtTimKiem.CustomButton.Location = new System.Drawing.Point(195, 1);
-            this.txtTimKiem.CustomButton.Name = "";
-            this.txtTimKiem.CustomButton.Size = new System.Drawing.Size(33, 33);
-            this.txtTimKiem.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtTimKiem.CustomButton.TabIndex = 1;
-            this.txtTimKiem.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtTimKiem.CustomButton.UseSelectable = true;
-            this.txtTimKiem.CustomButton.Visible = false;
-            this.txtTimKiem.DisplayIcon = true;
-            this.txtTimKiem.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtTimKiem.Icon = ((System.Drawing.Image)(resources.GetObject("txtTimKiem.Icon")));
-            this.txtTimKiem.IconRight = true;
-            this.txtTimKiem.Lines = new string[0];
-            this.txtTimKiem.Location = new System.Drawing.Point(467, 16);
-            this.txtTimKiem.MaxLength = 32767;
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.PasswordChar = '\0';
-            this.txtTimKiem.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtTimKiem.SelectedText = "";
-            this.txtTimKiem.SelectionLength = 0;
-            this.txtTimKiem.SelectionStart = 0;
-            this.txtTimKiem.ShortcutsEnabled = true;
-            this.txtTimKiem.Size = new System.Drawing.Size(229, 35);
-            this.txtTimKiem.TabIndex = 19;
-            this.txtTimKiem.UseCustomBackColor = true;
-            this.txtTimKiem.UseCustomForeColor = true;
-            this.txtTimKiem.UseSelectable = true;
-            this.txtTimKiem.UseStyleColors = true;
-            this.txtTimKiem.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtTimKiem.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // QLPhieuNhap
             // 
