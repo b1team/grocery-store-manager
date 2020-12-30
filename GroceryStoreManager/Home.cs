@@ -26,14 +26,14 @@ namespace GroceryStoreManager
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            if (!panel.Controls.Contains(GroceryStoreManager.DonHang.Instance))
+            if (!panel.Controls.Contains(GroceryStoreManager.BaoCao.Instance))
             {
-                panel.Controls.Add(GroceryStoreManager.DonHang.Instance);
-                GroceryStoreManager.DonHang.Instance.Dock = DockStyle.Fill;
-                GroceryStoreManager.DonHang.Instance.BringToFront();
+                panel.Controls.Add(GroceryStoreManager.BaoCao.Instance);
+                GroceryStoreManager.BaoCao.Instance.Dock = DockStyle.Fill;
+                GroceryStoreManager.BaoCao.Instance.BringToFront();
             }
             else
-                GroceryStoreManager.DonHang.Instance.BringToFront();
+                GroceryStoreManager.BaoCao.Instance.BringToFront();
         }
 
         private void metroTile2_Click(object sender, EventArgs e)
@@ -41,7 +41,7 @@ namespace GroceryStoreManager
             MetroFramework.MetroMessageBox.Show(this, "Message", "Ahihi", MessageBoxButtons.OK, MessageBoxIcon.Error, 100);
         }
 
-        private void DonHang_Click(object sender, EventArgs e)
+        private void NhapHang_Click(object sender, EventArgs e)
         {
             if (Application.OpenForms["NhapHang"] != null)
             {
@@ -79,17 +79,17 @@ namespace GroceryStoreManager
             form.Show();
         }
 
-        private void TileGiaoDich_Click(object sender, EventArgs e)
+        private void TileBaoCao_Click(object sender, EventArgs e)
         {
-            if (!panel.Controls.Contains(GroceryStoreManager.GiaoDich.Instance))
+            if (!panel.Controls.Contains(GroceryStoreManager.BaoCao.Instance))
             {
-                panel.Controls.Add(GroceryStoreManager.GiaoDich.Instance);
-                GroceryStoreManager.GiaoDich.Instance.Dock = DockStyle.Fill;
-                GroceryStoreManager.GiaoDich.Instance.BringToFront();
+                panel.Controls.Add(GroceryStoreManager.BaoCao.Instance);
+                GroceryStoreManager.BaoCao.Instance.Dock = DockStyle.Fill;
+                GroceryStoreManager.BaoCao.Instance.BringToFront();
             }
             else
             {
-                GroceryStoreManager.GiaoDich.Instance.BringToFront();
+                GroceryStoreManager.BaoCao.Instance.BringToFront();
             }
         }
 
