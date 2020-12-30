@@ -58,5 +58,12 @@ namespace GroceryStoreManager
                 MessageBox.Show("Lưu không thành công");
             }
         }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            session.DsNhaCungCap.Load();
+            var data = session.DsNhaCungCap.Local.ToBindingList().Where(ncc => ncc.MaNCC.ToString().Contains(txtTimKiem.Text) || ncc.TenNCC.Trim().Contains(txtTimKiem.Text));
+            GridNhaCC.DataSource = data.ToList();
+        }
     }
 }
