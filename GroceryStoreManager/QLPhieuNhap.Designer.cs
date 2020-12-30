@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QLPhieuNhap));
             this.GridPhieuNhap = new MetroFramework.Controls.MetroGrid();
             this.GridChiTietPhieuNhap = new MetroFramework.Controls.MetroGrid();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
@@ -46,12 +47,13 @@
             this.donGiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thanhTienDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chiTietPNBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.phieuNhapBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.chiTietPNBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.maPhieuNhapDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thanhTienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.daThanhToanDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ngayTaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phieuNhapBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.chiTietPNBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.txtTimKiem = new MetroFramework.Controls.MetroTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.GridPhieuNhap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridChiTietPhieuNhap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietPNBindingSource)).BeginInit();
@@ -93,7 +95,7 @@
             this.GridPhieuNhap.EnableHeadersVisualStyles = false;
             this.GridPhieuNhap.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.GridPhieuNhap.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.GridPhieuNhap.Location = new System.Drawing.Point(3, 48);
+            this.GridPhieuNhap.Location = new System.Drawing.Point(3, 57);
             this.GridPhieuNhap.Name = "GridPhieuNhap";
             this.GridPhieuNhap.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -145,7 +147,7 @@
             this.GridChiTietPhieuNhap.EnableHeadersVisualStyles = false;
             this.GridChiTietPhieuNhap.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.GridChiTietPhieuNhap.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.GridChiTietPhieuNhap.Location = new System.Drawing.Point(729, 51);
+            this.GridChiTietPhieuNhap.Location = new System.Drawing.Point(729, 57);
             this.GridChiTietPhieuNhap.Name = "GridChiTietPhieuNhap";
             this.GridChiTietPhieuNhap.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -168,9 +170,9 @@
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel1.ForeColor = System.Drawing.Color.White;
-            this.metroLabel1.Location = new System.Drawing.Point(3, 4);
+            this.metroLabel1.Location = new System.Drawing.Point(3, 0);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(702, 41);
+            this.metroLabel1.Size = new System.Drawing.Size(702, 54);
             this.metroLabel1.TabIndex = 16;
             this.metroLabel1.Text = "Danh Sách Phiếu Nhập";
             this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -183,9 +185,9 @@
             this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel2.ForeColor = System.Drawing.Color.White;
-            this.metroLabel2.Location = new System.Drawing.Point(729, 4);
+            this.metroLabel2.Location = new System.Drawing.Point(729, 0);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(822, 41);
+            this.metroLabel2.Size = new System.Drawing.Size(822, 54);
             this.metroLabel2.TabIndex = 17;
             this.metroLabel2.Text = "Chi Tiết Phiếu Nhập";
             this.metroLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -196,9 +198,9 @@
             // 
             this.btnSave.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(1338, 652);
+            this.btnSave.Location = new System.Drawing.Point(1312, 656);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(203, 45);
+            this.btnSave.Size = new System.Drawing.Size(220, 45);
             this.btnSave.Style = MetroFramework.MetroColorStyle.Red;
             this.btnSave.TabIndex = 18;
             this.btnSave.Text = "LƯU";
@@ -248,14 +250,6 @@
             // 
             this.chiTietPNBindingSource.DataSource = typeof(GroceryStoreManager.Domains.ChiTietPN);
             // 
-            // phieuNhapBindingSource
-            // 
-            this.phieuNhapBindingSource.DataSource = typeof(GroceryStoreManager.Domains.PhieuNhap);
-            // 
-            // chiTietPNBindingSource1
-            // 
-            this.chiTietPNBindingSource1.DataSource = typeof(GroceryStoreManager.Domains.ChiTietPN);
-            // 
             // maPhieuNhapDataGridViewTextBoxColumn
             // 
             this.maPhieuNhapDataGridViewTextBoxColumn.DataPropertyName = "MaPhieuNhap";
@@ -286,16 +280,65 @@
             this.ngayTaoDataGridViewTextBoxColumn.Name = "ngayTaoDataGridViewTextBoxColumn";
             this.ngayTaoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            //  QLPhieuNhap
+            // phieuNhapBindingSource
+            // 
+            this.phieuNhapBindingSource.DataSource = typeof(GroceryStoreManager.Domains.PhieuNhap);
+            // 
+            // chiTietPNBindingSource1
+            // 
+            this.chiTietPNBindingSource1.DataSource = typeof(GroceryStoreManager.Domains.ChiTietPN);
+            // 
+            // txtTimKiem
+            // 
+            // 
+            // 
+            // 
+            this.txtTimKiem.CustomButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.txtTimKiem.CustomButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("resource.BackgroundImage")));
+            this.txtTimKiem.CustomButton.Image = null;
+            this.txtTimKiem.CustomButton.Location = new System.Drawing.Point(195, 1);
+            this.txtTimKiem.CustomButton.Name = "";
+            this.txtTimKiem.CustomButton.Size = new System.Drawing.Size(33, 33);
+            this.txtTimKiem.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtTimKiem.CustomButton.TabIndex = 1;
+            this.txtTimKiem.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtTimKiem.CustomButton.UseSelectable = true;
+            this.txtTimKiem.CustomButton.Visible = false;
+            this.txtTimKiem.DisplayIcon = true;
+            this.txtTimKiem.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.txtTimKiem.Icon = ((System.Drawing.Image)(resources.GetObject("txtTimKiem.Icon")));
+            this.txtTimKiem.IconRight = true;
+            this.txtTimKiem.Lines = new string[0];
+            this.txtTimKiem.Location = new System.Drawing.Point(467, 16);
+            this.txtTimKiem.MaxLength = 32767;
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.PasswordChar = '\0';
+            this.txtTimKiem.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtTimKiem.SelectedText = "";
+            this.txtTimKiem.SelectionLength = 0;
+            this.txtTimKiem.SelectionStart = 0;
+            this.txtTimKiem.ShortcutsEnabled = true;
+            this.txtTimKiem.Size = new System.Drawing.Size(229, 35);
+            this.txtTimKiem.TabIndex = 19;
+            this.txtTimKiem.UseCustomBackColor = true;
+            this.txtTimKiem.UseCustomForeColor = true;
+            this.txtTimKiem.UseSelectable = true;
+            this.txtTimKiem.UseStyleColors = true;
+            this.txtTimKiem.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtTimKiem.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
+            // 
+            // QLPhieuNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.GridChiTietPhieuNhap);
             this.Controls.Add(this.GridPhieuNhap);
-            this.Name = " QLPhieuNhap";
+            this.Name = "QLPhieuNhap";
             this.Size = new System.Drawing.Size(1554, 704);
             this.Load += new System.EventHandler(this.QLPhieuNhap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridPhieuNhap)).EndInit();
@@ -326,5 +369,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn thanhTienDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn daThanhToanDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayTaoDataGridViewTextBoxColumn;
+        private MetroFramework.Controls.MetroTextBox txtTimKiem;
     }
 }
