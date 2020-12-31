@@ -102,7 +102,7 @@
             this.txtMatKhau.Location = new System.Drawing.Point(157, 210);
             this.txtMatKhau.MaxLength = 32767;
             this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.PasswordChar = '\0';
+            this.txtMatKhau.PasswordChar = '*';
             this.txtMatKhau.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtMatKhau.SelectedText = "";
             this.txtMatKhau.SelectionLength = 0;
