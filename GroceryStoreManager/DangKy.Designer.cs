@@ -47,7 +47,7 @@
             this.btnRegister.Location = new System.Drawing.Point(189, 486);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(166, 40);
-            this.btnRegister.TabIndex = 6;
+            this.btnRegister.TabIndex = 4;
             this.btnRegister.Text = "Đăng Ký";
             this.btnRegister.UseCustomBackColor = true;
             this.btnRegister.UseCustomForeColor = true;
@@ -79,7 +79,7 @@
             this.txtTenNguoiDung.SelectionStart = 0;
             this.txtTenNguoiDung.ShortcutsEnabled = true;
             this.txtTenNguoiDung.Size = new System.Drawing.Size(266, 39);
-            this.txtTenNguoiDung.TabIndex = 5;
+            this.txtTenNguoiDung.TabIndex = 2;
             this.txtTenNguoiDung.UseSelectable = true;
             this.txtTenNguoiDung.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtTenNguoiDung.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -109,7 +109,7 @@
             this.txtMatKhau.SelectionStart = 0;
             this.txtMatKhau.ShortcutsEnabled = true;
             this.txtMatKhau.Size = new System.Drawing.Size(266, 39);
-            this.txtMatKhau.TabIndex = 4;
+            this.txtMatKhau.TabIndex = 1;
             this.txtMatKhau.UseSelectable = true;
             this.txtMatKhau.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtMatKhau.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -139,7 +139,7 @@
             this.txtTenDangNhap.SelectionStart = 0;
             this.txtTenDangNhap.ShortcutsEnabled = true;
             this.txtTenDangNhap.Size = new System.Drawing.Size(266, 39);
-            this.txtTenDangNhap.TabIndex = 7;
+            this.txtTenDangNhap.TabIndex = 0;
             this.txtTenDangNhap.UseSelectable = true;
             this.txtTenDangNhap.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtTenDangNhap.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -177,7 +177,7 @@
             this.boxQuyen.Location = new System.Drawing.Point(156, 395);
             this.boxQuyen.Name = "boxQuyen";
             this.boxQuyen.Size = new System.Drawing.Size(266, 21);
-            this.boxQuyen.TabIndex = 11;
+            this.boxQuyen.TabIndex = 3;
             // 
             // metroLabel4
             // 
@@ -206,7 +206,7 @@
             this.MaximumSize = new System.Drawing.Size(580, 606);
             this.MinimumSize = new System.Drawing.Size(580, 606);
             this.Name = "DangKy";
-            this.Text = "Đăng Ký";
+            this.Text = "Thêm nhân viên";
             this.Load += new System.EventHandler(this.DangKy_Load);
             this.ResumeLayout(false);
 

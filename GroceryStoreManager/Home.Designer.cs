@@ -37,6 +37,7 @@
             this.TileQLHang = new MetroFramework.Controls.MetroTile();
             this.TileQLHoaDon = new MetroFramework.Controls.MetroTile();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tileQuanLyNhanVien = new MetroFramework.Controls.MetroTile();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -147,11 +148,25 @@
             this.panel1.Controls.Add(this.NhapHang);
             this.panel1.Controls.Add(this.TileQLPhieuNhap);
             this.panel1.Controls.Add(this.TileBaoCao);
+            this.panel1.Controls.Add(this.tileQuanLyNhanVien);
             this.panel1.Controls.Add(this.TileNhaCungCap);
             this.panel1.Location = new System.Drawing.Point(-2, 33);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1602, 130);
             this.panel1.TabIndex = 10;
+            // 
+            // tileQuanLyNhanVien
+            // 
+            this.tileQuanLyNhanVien.ActiveControl = null;
+            this.tileQuanLyNhanVien.Location = new System.Drawing.Point(1223, 20);
+            this.tileQuanLyNhanVien.Name = "tileQuanLyNhanVien";
+            this.tileQuanLyNhanVien.Size = new System.Drawing.Size(176, 90);
+            this.tileQuanLyNhanVien.Style = MetroFramework.MetroColorStyle.Teal;
+            this.tileQuanLyNhanVien.TabIndex = 4;
+            this.tileQuanLyNhanVien.Text = "Quản lý nhân viên";
+            this.tileQuanLyNhanVien.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.tileQuanLyNhanVien.UseSelectable = true;
+            this.tileQuanLyNhanVien.Click += new System.EventHandler(this.quanLyNhanVienHandle);
             // 
             // Home
             // 
@@ -180,6 +195,7 @@
         private MetroFramework.Controls.MetroTile TileQLHang;
         private MetroFramework.Controls.MetroTile TileQLHoaDon;
         private System.Windows.Forms.Panel panel1;
+        private MetroFramework.Controls.MetroTile tileQuanLyNhanVien;
     }
 }
 

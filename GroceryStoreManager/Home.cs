@@ -139,5 +139,22 @@ namespace GroceryStoreManager
                 GroceryStoreManager.QLHoaDon.Instance.LoadData();
             }
         }
+
+        private void quanLyNhanVienHandle(object sender, EventArgs e)
+        {
+            if (!panel.Controls.Contains(GroceryStoreManager.QuanLyNhanVien.Instance))
+            {
+                GroceryStoreManager.QuanLyNhanVien.Instance.NguoiDung = nguoiDung;
+                GroceryStoreManager.QuanLyNhanVien.Instance.QuyenNguoiDung = quuyenNguoiDung;
+                panel.Controls.Add(GroceryStoreManager.QuanLyNhanVien.Instance);
+                GroceryStoreManager.QuanLyNhanVien.Instance.Dock = DockStyle.Fill;
+                GroceryStoreManager.QuanLyNhanVien.Instance.BringToFront();
+            }
+            else
+            {
+                GroceryStoreManager.QuanLyNhanVien.Instance.BringToFront();
+                //GroceryStoreManager.QuanLyNhanVien.Instance.LoadData();
+            }
+        }
     }
 }
