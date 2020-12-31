@@ -44,7 +44,7 @@ namespace GroceryStoreManager
                 if (Convert.ToInt32(row1.Cells["MaHang"].Value) == item.MaHang)
                 {
                     row1.Cells["SoLuong"].Value = (int)row1.Cells["SoLuong"].Value + 1;
-                    row1.Cells["ThanhTien"].Value = Model.ChiTietPhieuNhap.ThanhToan((int)row1.Cells["GiaNhap"].Value, (int)row1.Cells["SoLuong"].Value);
+                    row1.Cells["ThanhTien"].Value = Model.ChiTietPhieuNhap.ThanhToan((float)Convert.ToDouble(row1.Cells["GiaNhap"].Value), (int)row1.Cells["SoLuong"].Value);
                     existed = true;
                     break;
                 }

@@ -33,7 +33,7 @@ namespace GroceryStoreManager.Model
         public int SoLuong { get;  set; }
         public float ThanhTien { get; set; }
 
-        public static float ThanhToan(int DonGia, int SoLuong)
+        public static float ThanhToan(float DonGia, int SoLuong)
         {
             return DonGia * SoLuong;
         }
