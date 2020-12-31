@@ -38,6 +38,7 @@ namespace GroceryStoreManager
                 BindingSource data = new BindingSource();
                 data.DataSource = session.DsPhieuNhap.OrderByDescending(phieunhap => phieunhap.NgayTao).ToList();
                 GridPhieuNhap.DataSource = data;
+                nhaCungCapBindingSource.DataSource = session.DsNhaCungCap.ToList();
             }
             catch (Exception)
             {

@@ -160,6 +160,12 @@
     <Compile Include="QLHoaDon.Designer.cs">
       <DependentUpon>QLHoaDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLyNhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuanLyNhanVien.Designer.cs">
+      <DependentUpon>QuanLyNhanVien.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BanHang.resx">
       <DependentUpon>BanHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -215,6 +221,9 @@
     <EmbeddedResource Include="QLHoaDon.resx">
       <DependentUpon>QLHoaDon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyNhanVien.resx">
+      <DependentUpon>QuanLyNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\GroceryStoreManager.Domains.ChiTietHD1.datasource" />
     <None Include="Properties\DataSources\GroceryStoreManager.Domains.HoaDon1.datasource" />
@@ -222,8 +231,10 @@
     <None Include="Properties\DataSources\GroceryStoreManager.Domains.HoaDon.datasource" />
     <None Include="Properties\DataSources\GroceryStoreManager.Domains.MatHang.datasource" />
     <None Include="Properties\DataSources\GroceryStoreManager.Domains.ChiTietPN.datasource" />
+    <None Include="Properties\DataSources\GroceryStoreManager.Domains.NguoiDung.datasource" />
     <None Include="Properties\DataSources\GroceryStoreManager.Domains.NhaCungCap.datasource" />
     <None Include="Properties\DataSources\GroceryStoreManager.Domains.PhieuNhap.datasource" />
+    <None Include="Properties\DataSources\GroceryStoreManager.Domains.Quyen.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
