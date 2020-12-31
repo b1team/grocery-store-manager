@@ -59,7 +59,6 @@ namespace GroceryStoreManager
             try
             {
                 db.SaveChanges();
-                MessageBox.Show($"{nguoiDung.MaNguoiDung}");
                 MessageBox.Show("Tạo người dùng thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch
